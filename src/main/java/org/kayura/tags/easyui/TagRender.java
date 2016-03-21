@@ -39,7 +39,9 @@ public abstract class TagRender extends BodyTagSupport {
 	private String classStyle;
 	private String style;
 
-	public abstract String getName();
+	public String getName() {
+		return "";
+	}
 
 	/**
 	 * 获取 EasyUI 定义的标签样式名.
@@ -136,7 +138,9 @@ public abstract class TagRender extends BodyTagSupport {
 				out.write(" id=\"" + getId() + "\"");
 			}
 			if (getName() == null) {
-				out.write(" name=\"" + getId() + "\"");
+				if (!isEmpty(getId())) {
+					out.write(" name=\"" + getId() + "\"");
+				}
 			} else if (!isEmpty(getName())) {
 				out.write(" name=\"" + getName() + "\"");
 			}

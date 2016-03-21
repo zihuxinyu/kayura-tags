@@ -5,7 +5,6 @@
 package org.kayura.tags.common;
 
 import java.io.IOException;
-import java.io.StringWriter;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
@@ -13,23 +12,20 @@ import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 /**
- * ResourcesTag
+ * ResourceTag
  *
  * @author liangxia@live.com
  */
-public class ResourcesTag extends SimpleTagSupport {
+public class ResourceTag extends SimpleTagSupport {
 
 	static final String LINK_TAG = "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\r";
 	static final String SCRIPT_TAG = "<script type=\"text/javascript\" src=\"%s\"></script>\r";
 
 	private String location;
+	private String name;
 
 	@Override
 	public void doTag() throws JspException, IOException {
-
-		StringWriter sw = new StringWriter();
-		this.getJspBody().invoke(sw);
-		String content = sw.toString();
 
 		String ctxPath = ((PageContext) this.getJspContext()).getServletContext().getContextPath();
 		if (getLocation() != null) {
@@ -38,43 +34,44 @@ public class ResourcesTag extends SimpleTagSupport {
 			setLocation(ctxPath);
 		}
 
-		String[] fileNames = content.split("\r");
-		if (fileNames != null) {
+		if (name != null && name.trim().length() > 0) {
 
-			JspWriter out = this.getJspContext().getOut();
-			for (String name : fileNames) {
+			String type = null;
+			if (name.endsWith(".css")) {
+				type = "text/css";
+			} else if (name.endsWith(".js")) {
+				type = "text/javascript";
+			}
 
-				String fn = name.replaceAll("\\s*", "");
-				if (fn.length() > 0) {
+			if (type != null) {
 
-					String type = null;
-					if (fn.endsWith(".css")) {
-						type = "text/css";
-					} else if (fn.endsWith(".js")) {
-						type = "text/javascript";
-					}
+				String fullName = getLocation() + "/" + name;
+				JspWriter out = this.getJspContext().getOut();
 
-					if (type != null) {
-
-						String fullName = getLocation() + "/" + fn;
-
-						if (type.equals("text/css") || type.equals("css")) {
-							out.write(String.format(LINK_TAG, fullName));
-						} else if (type.equals("text/javascript") || type.equals("js")) {
-							out.write(String.format(SCRIPT_TAG, fullName));
-						}
-					}
+				if (type.equals("text/css") || type.equals("css")) {
+					out.write(String.format(LINK_TAG, fullName));
+				} else if (type.equals("text/javascript") || type.equals("js")) {
+					out.write(String.format(SCRIPT_TAG, fullName));
 				}
 			}
 		}
+
 	}
-	
+
 	public String getLocation() {
 		return location;
 	}
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
