@@ -168,10 +168,16 @@ public abstract class TagRender extends BodyTagSupport {
 			} else if (!isEmpty(getName())) {
 				out.write(" name=\"" + getName() + "\"");
 			}
-			if (!isEmpty(getClassStyle())) {
-				out.write(" class=\"easyui-" + getEasyUITag() + " " + getClassStyle().trim() + "\"");
+			if (!isEmpty(getEasyUITag())) {
+				if (!isEmpty(getClassStyle())) {
+					out.write(" class=\"easyui-" + getEasyUITag() + " " + getClassStyle().trim() + "\"");
+				} else {
+					out.write(" class=\"easyui-" + getEasyUITag() + "\"");
+				}
 			} else {
-				out.write(" class=\"easyui-" + getEasyUITag() + "\"");
+				if (!isEmpty(getClassStyle())) {
+					out.write(" class=\"" + getClassStyle().trim() + "\"");
+				}
 			}
 			doRenderStart(out);
 			if (!isEmpty(getStyle())) {
@@ -179,7 +185,7 @@ public abstract class TagRender extends BodyTagSupport {
 			}
 			String options = optionsToString();
 			if (!isEmpty(options)) {
-				options = options.replace("'", "\\'");
+				options = options.replace('\'', '"');
 				out.write(" data-options='" + options + "'");
 			}
 			out.write(">");
@@ -196,7 +202,7 @@ public abstract class TagRender extends BodyTagSupport {
 	public int doEndTag() throws JspException {
 		JspWriter out = this.pageContext.getOut();
 		try {
-			out.write("</" + getHtmlTag() + ">\r");
+			out.write("</" + getHtmlTag() + ">\n");
 			doAfterEnd(out);
 		} catch (IOException e) {
 			e.printStackTrace();

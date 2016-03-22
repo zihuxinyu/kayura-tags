@@ -92,10 +92,10 @@ public class BodyTag extends TagRender {
 				if (!isEmpty(getStyle())) {
 					out.write(" style=\"" + getStyle() + "\"");
 				}
-				out.write(">\r");
+				out.write(">\n");
 			} else {
 
-				out.write("\r");
+				out.write("\n");
 			}
 
 			doRenderBody(out);
@@ -116,7 +116,7 @@ public class BodyTag extends TagRender {
 			if (getFull()) {
 				out.write("</div>");
 			}
-			out.write("</body>\r");
+			out.write("</body>\n");
 			doAfterEnd(out);
 		} catch (IOException e) {
 			e.printStackTrace();

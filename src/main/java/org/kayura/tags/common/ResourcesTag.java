@@ -19,8 +19,8 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
  */
 public class ResourcesTag extends SimpleTagSupport {
 
-	static final String LINK_TAG = "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\r";
-	static final String SCRIPT_TAG = "<script type=\"text/javascript\" src=\"%s\"></script>\r";
+	static final String LINK_TAG = "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n";
+	static final String SCRIPT_TAG = "<script type=\"text/javascript\" src=\"%s\"></script>\n";
 
 	private String location;
 
@@ -38,7 +38,7 @@ public class ResourcesTag extends SimpleTagSupport {
 			setLocation(ctxPath);
 		}
 
-		String[] fileNames = content.split("\r");
+		String[] fileNames = content.split("\n");
 		if (fileNames != null) {
 
 			JspWriter out = this.getJspContext().getOut();

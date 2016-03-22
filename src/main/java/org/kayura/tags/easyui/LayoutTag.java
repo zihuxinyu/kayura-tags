@@ -14,9 +14,11 @@ import javax.servlet.jsp.JspWriter;
  *
  * @author liangxia@live.com
  */
-public class LayoutAreaTag extends TagRender {
+public class LayoutTag extends TagRender {
 
 	private static final long serialVersionUID = -1028006575938773535L;
+
+	private Boolean fit;
 
 	@Override
 	public String getEasyUITag() {
@@ -38,7 +40,17 @@ public class LayoutAreaTag extends TagRender {
 
 		Map<String, Object> map = new HashMap<String, Object>();
 
+		putMap(map, "fit", fit);
+
 		return map;
+	}
+
+	public Boolean getFit() {
+		return fit;
+	}
+
+	public void setFit(Boolean fit) {
+		this.fit = fit;
 	}
 
 }

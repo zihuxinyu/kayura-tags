@@ -131,7 +131,7 @@ public class PanelTag extends TagRender {
 
 	@Override
 	public void doRenderBody(JspWriter out) throws IOException {
-		
+
 		if (!isEmpty(getHeader())) {
 			out.write("<header>" + getHeader() + "</header>");
 		}
@@ -159,18 +159,28 @@ public class PanelTag extends TagRender {
 		putMap(map, "closable", closable);
 
 		if (tools != null) {
-			if (tools.startsWith("#")) {
-				putMap(map, "tools", tools);
+			if (tools instanceof String) {
+				String t = (String) tools;
+				if (t.startsWith("#")) {
+					putMap(map, "tools", t);
+				} else {
+					putMap(map, "tools", RawString.make(t));
+				}
 			} else {
-				putMap(map, "tools", RawString.make(tools));
+				putMap(map, "tools", tools);
 			}
 		}
 
 		if (footer != null) {
-			if (footer.startsWith("#")) {
-				putMap(map, "footer", footer);
+			if (footer instanceof String) {
+				String t = (String) footer;
+				if (t.startsWith("#")) {
+					putMap(map, "footer", t);
+				} else {
+					putMap(map, "footer", RawString.make(t));
+				}
 			} else {
-				putMap(map, "footer", RawString.make(footer));
+				putMap(map, "footer", footer);
 			}
 		}
 

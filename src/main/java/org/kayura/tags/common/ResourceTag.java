@@ -18,8 +18,8 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
  */
 public class ResourceTag extends SimpleTagSupport {
 
-	static final String LINK_TAG = "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\r";
-	static final String SCRIPT_TAG = "<script type=\"text/javascript\" src=\"%s\"></script>\r";
+	static final String LINK_TAG = "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n";
+	static final String SCRIPT_TAG = "<script type=\"text/javascript\" src=\"%s\"></script>\n";
 
 	private String location;
 	private String name;
