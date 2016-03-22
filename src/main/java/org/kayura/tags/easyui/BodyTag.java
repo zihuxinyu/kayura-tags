@@ -26,6 +26,8 @@ public class BodyTag extends TagRender {
 	private static final Log logger = LogFactory.getLog(BodyTag.class);
 
 	private Boolean full = false;
+	private Boolean layout = false;
+	private String padding;
 
 	@Override
 	public String getEasyUITag() {
@@ -41,27 +43,47 @@ public class BodyTag extends TagRender {
 	}
 
 	@Override
+	public void doBeforeStart(JspWriter out) {
+
+		String style = this.getStyle();
+
+		style = style == null ? "" : style;
+		if (!isEmpty(getPadding())) {
+			if (!style.contains("padding")) {
+				style += "padding:" + getPadding() + ";";
+			}
+		}
+
+		this.setStyle(style);
+	}
+
+	@Override
 	public int doStartTag() {
 		JspWriter out = this.pageContext.getOut();
 		try {
 
+			doBeforeStart(out);
+
 			out.write("<body");
-			if (getFull()) {
-				
+
+			if (getFull() || getLayout()) {
 				if (!isEmpty(getClassStyle())) {
 					out.write(" class=\"easyui-" + getEasyUITag() + " " + getClassStyle() + "\"");
 				} else {
 					out.write(" class=\"easyui-" + getEasyUITag() + "\"");
 				}
 			} else {
-				
 				if (!isEmpty(getClassStyle())) {
 					out.write(" class=\"" + getClassStyle() + "\"");
 				}
+			}
+
+			if (!getFull()) {
 				if (!isEmpty(getStyle())) {
 					out.write(" style=\"" + getStyle() + "\"");
 				}
 			}
+
 			out.write(">");
 
 			if (getFull()) {
@@ -71,7 +93,12 @@ public class BodyTag extends TagRender {
 					out.write(" style=\"" + getStyle() + "\"");
 				}
 				out.write(">\r");
+			} else {
+
+				out.write("\r");
 			}
+
+			doRenderBody(out);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -90,6 +117,7 @@ public class BodyTag extends TagRender {
 				out.write("</div>");
 			}
 			out.write("</body>\r");
+			doAfterEnd(out);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -97,11 +125,11 @@ public class BodyTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderStart(JspWriter writer) {
+	public void doRenderStart(JspWriter out) {
 	}
 
 	@Override
-	public void doRenderBody(JspWriter writer) {
+	public void doRenderBody(JspWriter out) {
 	}
 
 	public Boolean getFull() {
@@ -110,6 +138,22 @@ public class BodyTag extends TagRender {
 
 	public void setFull(Boolean full) {
 		this.full = full;
+	}
+
+	public Boolean getLayout() {
+		return layout;
+	}
+
+	public void setLayout(Boolean layout) {
+		this.layout = layout;
+	}
+
+	public String getPadding() {
+		return padding;
+	}
+
+	public void setPadding(String padding) {
+		this.padding = padding;
 	}
 
 }

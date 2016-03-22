@@ -11,6 +11,15 @@ package org.kayura.tags.types;
  */
 public class RawString {
 
+	public static RawString make(String value) {
+
+		if (value != null && value.trim().length() > 0) {
+			return new RawString(value);
+		} else {
+			return null;
+		}
+	}
+
 	private String value;
 
 	public RawString() {

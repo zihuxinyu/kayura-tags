@@ -22,7 +22,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * TagRender
+ * EasyUI 标签库基础渲染器。
  *
  * @author liangxia@live.com
  */
@@ -33,8 +33,16 @@ public abstract class TagRender extends BodyTagSupport {
 	private static final ObjectMapper objectMapper = new ObjectMapper();
 
 	static {
+		// 不生成值为 null 的属性.
 		objectMapper.setSerializationInclusion(Include.NON_NULL);
 	}
+
+	public static final String METHOD_POST = "POST";
+	public static final String METHOD_GET = "GET";
+
+	public static final String ANIMATION_SLIDE = "slide";
+	public static final String ANIMATION_FADE = "fade";
+	public static final String ANIMATION_SHOW = "show";
 
 	private String classStyle;
 	private String style;
@@ -60,16 +68,22 @@ public abstract class TagRender extends BodyTagSupport {
 	 * 
 	 * @param writer
 	 */
-	public abstract void doRenderStart(JspWriter writer);
+	public abstract void doRenderStart(JspWriter out) throws Exception;
 
 	/**
 	 * 当生成标签内容时的动作，如：&lt;div&gt;{动作}&lt;/div&gt;
 	 * 
 	 * @param writer
 	 */
-	public abstract void doRenderBody(JspWriter writer);
+	public abstract void doRenderBody(JspWriter out) throws Exception;
 
 	public abstract Map<String, Object> makeOptions();
+
+	public void putMap(Map<String, Object> map, String key, Object value) {
+		if (value != null) {
+			map.put(key, value);
+		}
+	}
 
 	public String json(Object value) {
 		String s = null;
@@ -128,11 +142,21 @@ public abstract class TagRender extends BodyTagSupport {
 		return value == null || "".equals(value.trim());
 	}
 
+	public void doBeforeStart(JspWriter out) {
+
+	}
+
+	public void doAfterEnd(JspWriter out) {
+
+	}
+
 	@Override
 	public int doStartTag() {
 
 		JspWriter out = this.pageContext.getOut();
 		try {
+			doBeforeStart(out);
+
 			out.write("<" + this.getHtmlTag());
 			if (!isEmpty(getId())) {
 				out.write(" id=\"" + getId() + "\"");
@@ -153,10 +177,14 @@ public abstract class TagRender extends BodyTagSupport {
 			if (!isEmpty(getStyle())) {
 				out.write(" style=\"" + getStyle() + "\"");
 			}
-			out.write(" data-options='" + optionsToString() + "'");
+			String options = optionsToString();
+			if (!isEmpty(options)) {
+				options = options.replace("'", "\\'");
+				out.write(" data-options='" + options + "'");
+			}
 			out.write(">");
 			doRenderBody(out);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e);
 		}
@@ -169,6 +197,7 @@ public abstract class TagRender extends BodyTagSupport {
 		JspWriter out = this.pageContext.getOut();
 		try {
 			out.write("</" + getHtmlTag() + ">\r");
+			doAfterEnd(out);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

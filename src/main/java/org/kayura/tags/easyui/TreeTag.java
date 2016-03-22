@@ -22,9 +22,6 @@ public class TreeTag extends TagRender {
 
 	private static final long serialVersionUID = 7276686505986997478L;
 
-	public static final String METHOD_POST = "POST";
-	public static final String METHOD_GET = "GET";
-
 	private String url;
 	private String method;
 	private Boolean animate;
@@ -95,12 +92,12 @@ public class TreeTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderStart(JspWriter writer) {
+	public void doRenderStart(JspWriter out) {
 
 	}
 
 	@Override
-	public void doRenderBody(JspWriter writer) {
+	public void doRenderBody(JspWriter out) {
 
 	}
 

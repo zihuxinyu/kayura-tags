@@ -13,14 +13,18 @@
 		<attribute>
 			<name>full</name>
 			<description>是否铺满页面。</description>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>layout</name>
+			<description>是否将 Body 设置为布局页。</description>
+		</attribute>
+		<attribute>
+			<name>padding</name>
+			<description>设置页面内间距。</description>
 		</attribute>
 		<attribute>
 			<name>style</name>
 			<description>Body 样式定义.</description>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
 
@@ -39,7 +43,7 @@
 	<tag>
 		<name>resource</name>
 		<tag-class>org.kayura.tags.common.ResourceTag</tag-class>
-		<body-content>scriptless</body-content>
+		<body-content>empty</body-content>
 		<attribute>
 			<name>location</name>
 			<description>可指定的站点路径，未指定将识别为根路径下。</description>
@@ -57,7 +61,7 @@
 	<tag>
 		<name>tree</name>
 		<tag-class>org.kayura.tags.easyui.TreeTag</tag-class>
-		<body-content>JSP</body-content>
+		<body-content>empty</body-content>
 		<attribute>
 			<name>id</name>
 			<required>true</required>
@@ -134,6 +138,293 @@
 		<attribute>
 			<name>loadFilter</name>
 			<description>返回过滤过的数据进行展示。返回数据是标准树格式。函数定义：function(data,parent)</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>panel</name>
+		<tag-class>org.kayura.tags.easyui.PanelTag</tag-class>
+		<body-content>jsp</body-content>
+		<attribute>
+			<name>title</name>
+			<description>在面板头部显示的标题文本。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>设置一个16x16图标的CSS类ID显示在面板左上角。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>padding</name>
+			<description>设置内间距。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<description>设置面板宽度。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>设置面板高度。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<description>设置面板距离左边的位置（即X轴位置）。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<description>设置面板距离顶部的位置（即Y轴位置）。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<description>添加一个CSS类ID到面板。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>headerCls</name>
+			<description>添加一个CSS类ID到面板头部。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>bodyCls</name>
+			<description>添加一个CSS类ID到面板正文部分。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<description>当设置为true的时候面板大小将自适应父容器。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>border</name>
+			<description>定义是否显示面板边框。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>doSize</name>
+			<description>如果设置为true，在面板被创建的时候将重置大小和重新布局。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>noheader</name>
+			<description>如果设置为true，那么将不会创建面板标题。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<description>面板主体内容。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<description>定义是否显示可折叠按钮。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>minimizable</name>
+			<description>定义是否显示最小化按钮。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>maximizable</name>
+			<description>定义是否显示最大化按钮。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>closable</name>
+			<description>定义是否显示关闭按钮。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>tools</name>
+			<description>自定义工具菜单，可用值：1) 数组，每个元素都包含'iconCls'和'handler'属性。2) 指向工具菜单的选择器。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>header</name>
+			<description>定义面板标题。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>footer</name>
+			<description>定义面板页脚。可用值：1) 数组，每个元素都包含'iconCls'和'handler'属性。2) 指向工具菜单的选择器。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>openAnimation</name>
+			<description>定义打开面板的动画，可用值有：'slide','fade','show'。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>openDuration</name>
+			<description>定义打开面板的持续时间。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>closeAnimation</name>
+			<description>定义关闭面板的动画，可用值有：'slide','fade','show'。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>closeDuration</name>
+			<description>定义关闭面板的持续时间。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>collapsed</name>
+			<description>定义是否在初始化的时候折叠面板。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>minimized</name>
+			<description>定义是否在初始化的时候最小化面板。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>maximized</name>
+			<description>定义是否在初始化的时候最大化面板。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>closed</name>
+			<description>定义是否在初始化的时候关闭面板。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<description>从URL读取远程数据并且显示到面板。注意：内容将不会被载入，直到面板打开或扩大，在创建延迟加载面板时是非常有用的： </description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cache</name>
+			<description>如果为true，在超链接载入时缓存面板内容。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>loadingMessage</name>
+			<description>在加载远程数据的时候在面板内显示一条消息。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>extractor</name>
+			<description>定义如何从ajax应答数据中提取内容，返回提取数据。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<description>使用HTTP的哪一种方法读取内容页。可用值：'get','post'。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>queryParams</name>
+			<description>在加载内容页的时候添加的请求参数。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>loader</name>
+			<description>
+			定义了如何从远程服务器加载内容页，该函数接受以下参数：
+			param：参数对象发送给远程服务器。
+			success(data)：在检索数据成功的时候调用的回调函数。
+			error()：在检索数据失败的时候调用的回调函数。
+			</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>onBeforeLoad</name>
+			<description>在加载内容页之前触发，返回false将忽略该动作。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onLoad</name>
+			<description>在加载远程数据时触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<description>在加载内容页发生错误时触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onBeforeOpen</name>
+			<description>在打开面板之前触发，返回false可以取消打开操作。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onOpen</name>
+			<description>在打开面板之后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onBeforeClose</name>
+			<description>在关闭面板之前触发，返回false可以取消关闭操作。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onClose</name>
+			<description>在面板关闭之后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onBeforeDestroy</name>
+			<description>在面板销毁之前触发，返回false可以取消销毁操作。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onDestroy</name>
+			<description>在面板销毁之后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<description>在面板折叠之前触发，返回false可以终止折叠操作。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<description>在面板折叠之后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<description>在面板展开之前触发，返回false可以终止展开操作。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<description>在面板展开之后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<description>在面板改变大小之后触发。width：新的宽度，height：新的高度。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onMove</name>
+			<description>在面板移动之后触发。left：新的左边距位置，top：新的上边距位置。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onMaximize</name>
+			<description>在窗口最大化之后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onRestore</name>
+			<description>在窗口恢复到原始大小以后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onMinimize</name>
+			<description>在窗口最小化之后触发。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
 
