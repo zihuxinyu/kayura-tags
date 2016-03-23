@@ -26,7 +26,7 @@ public class LayoutTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderStart(JspWriter out) {
+	public void doRenderProperty(JspWriter out) {
 
 	}
 

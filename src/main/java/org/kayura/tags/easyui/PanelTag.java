@@ -122,7 +122,7 @@ public class PanelTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderStart(JspWriter out) throws IOException {
+	public void doRenderProperty(JspWriter out) throws IOException {
 
 		if (!isEmpty(getTitle())) {
 			out.write(" title=\"" + getTitle() + "\"");

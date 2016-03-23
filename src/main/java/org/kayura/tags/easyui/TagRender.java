@@ -4,7 +4,6 @@
  */
 package org.kayura.tags.easyui;
 
-import java.io.IOException;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -64,18 +63,22 @@ public abstract class TagRender extends BodyTagSupport {
 	}
 
 	/**
-	 * 当生成标签时的动作，如：&lt;div {动作} &gt;&lt;/div&gt;
+	 * 当生成标签时的用于添加属性，如：&lt;div {动作} &gt;&lt;/div&gt;
 	 * 
 	 * @param writer
 	 */
-	public abstract void doRenderStart(JspWriter out) throws Exception;
+	public void doRenderProperty(JspWriter out) throws Exception {
+
+	}
 
 	/**
 	 * 当生成标签内容时的动作，如：&lt;div&gt;{动作}&lt;/div&gt;
 	 * 
 	 * @param writer
 	 */
-	public abstract void doRenderBody(JspWriter out) throws Exception;
+	public void doRenderBody(JspWriter out) throws Exception {
+
+	}
 
 	public abstract Map<String, Object> makeOptions();
 
@@ -142,11 +145,11 @@ public abstract class TagRender extends BodyTagSupport {
 		return value == null || "".equals(value.trim());
 	}
 
-	public void doBeforeStart(JspWriter out) {
+	public void doBeforeStart(JspWriter out) throws Exception {
 
 	}
 
-	public void doAfterEnd(JspWriter out) {
+	public void doAfterEnd(JspWriter out) throws Exception {
 
 	}
 
@@ -179,7 +182,7 @@ public abstract class TagRender extends BodyTagSupport {
 					out.write(" class=\"" + getClassStyle().trim() + "\"");
 				}
 			}
-			doRenderStart(out);
+			doRenderProperty(out);
 			if (!isEmpty(getStyle())) {
 				out.write(" style=\"" + getStyle() + "\"");
 			}
@@ -204,7 +207,7 @@ public abstract class TagRender extends BodyTagSupport {
 		try {
 			out.write("</" + getHtmlTag() + ">\n");
 			doAfterEnd(out);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return Tag.EVAL_PAGE;

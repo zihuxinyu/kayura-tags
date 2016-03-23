@@ -92,7 +92,7 @@ public class TreeTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderStart(JspWriter out) {
+	public void doRenderProperty(JspWriter out) {
 
 	}
 

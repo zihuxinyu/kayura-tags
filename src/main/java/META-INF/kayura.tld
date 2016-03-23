@@ -7,6 +7,328 @@
 	<uri>http://www.kayura.org/tags/jeasyui</uri>
 
 	<tag>
+		<name>splitbutton</name>
+		<tag-class>org.kayura.tags.easyui.SplitButtonTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<description>按钮文字。</description>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>Body 样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>为true时禁用按钮。</description>
+		</attribute>
+		<attribute>
+			<name>toggle</name>
+			<description>为true时允许用户切换其状态是被选中还是未选择，可实现checkbox复选效果。</description>
+		</attribute>
+		<attribute>
+			<name>selected</name>
+			<description>定义按钮初始的选择状态，true为被选中，false为未选中。</description>
+		</attribute>
+		<attribute>
+			<name>group</name>
+			<description>指定相同组名称的按钮同属于一个组，可实现radio单选效果。</description>
+		</attribute>
+		<attribute>
+			<name>plain</name>
+			<description>为true时显示简洁效果。</description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>显示在按钮文字左侧的图标(16x16)的CSS类ID。</description>
+		</attribute>
+		<attribute>
+			<name>iconAlign</name>
+			<description>按钮图标位置。可用值有：'left','right','top','bottom'。</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<description>按钮大小。可用值有：'small','large'。</description>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<description>用来创建一个对应菜单的选择器。</description>
+		</attribute>
+		<attribute>
+			<name>duration</name>
+			<description>定义鼠标划过按钮时显示菜单所持续的时间，单位为毫秒。</description>
+		</attribute>
+		<attribute>
+			<name>menus</name>
+			<description>下拉菜单数据。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<name>onClick</name>
+			<description>在点击按钮的时候触发。</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>menubutton</name>
+		<tag-class>org.kayura.tags.easyui.MenuButtonTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<description>按钮文字。</description>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>Body 样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>为true时禁用按钮。</description>
+		</attribute>
+		<attribute>
+			<name>toggle</name>
+			<description>为true时允许用户切换其状态是被选中还是未选择，可实现checkbox复选效果。</description>
+		</attribute>
+		<attribute>
+			<name>selected</name>
+			<description>定义按钮初始的选择状态，true为被选中，false为未选中。</description>
+		</attribute>
+		<attribute>
+			<name>group</name>
+			<description>指定相同组名称的按钮同属于一个组，可实现radio单选效果。</description>
+		</attribute>
+		<attribute>
+			<name>plain</name>
+			<description>为true时显示简洁效果。</description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>显示在按钮文字左侧的图标(16x16)的CSS类ID。</description>
+		</attribute>
+		<attribute>
+			<name>iconAlign</name>
+			<description>按钮图标位置。可用值有：'left','right','top','bottom'。</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<description>按钮大小。可用值有：'small','large'。</description>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<description>用来创建一个对应菜单的选择器。</description>
+		</attribute>
+		<attribute>
+			<name>menuAlign</name>
+			<description>允许用户设置顶级菜单对齐方式。可用值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>duration</name>
+			<description>定义鼠标划过按钮时显示菜单所持续的时间，单位为毫秒。</description>
+		</attribute>
+		<attribute>
+			<name>hasDownArrow</name>
+			<description>定义是否显示向下箭头图标。</description>
+		</attribute>
+		<attribute>
+			<name>menus</name>
+			<description>下拉菜单数据。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+		
+	<tag>
+		<name>linkbutton</name>
+		<tag-class>org.kayura.tags.easyui.LinkButtonTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<description>按钮文字。</description>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<description>按钮链接地址.</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>Body 样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>为true时禁用按钮。</description>
+		</attribute>
+		<attribute>
+			<name>toggle</name>
+			<description>为true时允许用户切换其状态是被选中还是未选择，可实现checkbox复选效果。</description>
+		</attribute>
+		<attribute>
+			<name>selected</name>
+			<description>定义按钮初始的选择状态，true为被选中，false为未选中。</description>
+		</attribute>
+		<attribute>
+			<name>group</name>
+			<description>指定相同组名称的按钮同属于一个组，可实现radio单选效果。</description>
+		</attribute>
+		<attribute>
+			<name>plain</name>
+			<description>为true时显示简洁效果。</description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>显示在按钮文字左侧的图标(16x16)的CSS类ID。</description>
+		</attribute>
+		<attribute>
+			<name>iconAlign</name>
+			<description>按钮图标位置。可用值有：'left','right','top','bottom'。</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<description>按钮大小。可用值有：'small','large'。</description>
+		</attribute>
+		
+		<attribute>
+			<name>onClick</name>
+			<description>在点击按钮的时候触发。</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>menu</name>
+		<tag-class>org.kayura.tags.easyui.MenuTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>Body 样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>menus</name>
+			<description>搜索类型菜单数据。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<description>菜单z-index样式，增加它的值。</description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<description>菜单的左边距位置。</description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<description>菜单的上边距位置。</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<description>菜单对齐方式，可用值有：'left' 和 'right'。</description>
+		</attribute>
+		<attribute>
+			<name>minWidth</name>
+			<description>菜单的最小宽度。</description>
+		</attribute>
+		<attribute>
+			<name>itemHeight</name>
+			<description>菜单项高度。</description>
+		</attribute>
+		<attribute>
+			<name>duration</name>
+			<description>该属性允许用户自定义隐藏菜单动画的持续时间，以毫秒为单位。</description>
+		</attribute>
+		<attribute>
+			<name>hideOnUnhover</name>
+			<description>当设置为true时，在鼠标离开菜单的时候将自动隐藏菜单。</description>
+		</attribute>
+		<attribute>
+			<name>inline</name>
+			<description>当设置为true时，菜单将相对于父级标签进行定位，否则相对于body进行定位。</description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<description>当设置为true时，菜单尺寸将自动适配父容器。</description>
+		</attribute>
+		<attribute>
+			<name>noline</name>
+			<description>当设置为true时，菜单将不显示图标和文字之间的分割线。</description>
+		</attribute>
+		
+		<attribute>
+			<name>onShow</name>
+			<description>在菜单显示之后触发。</description>
+		</attribute>
+		<attribute>
+			<name>onHide</name>
+			<description>在菜单隐藏之后触发。</description>
+		</attribute>
+		<attribute>
+			<name>onClick</name>
+			<description>在菜单项被点击的时候触发。function menuHandler(item)。</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>searchbox</name>
+		<tag-class>org.kayura.tags.easyui.SearchBoxTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>id</name>
+			<description>搜索栏标签ID</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<description>组件宽度。</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>组件高度。</description>
+		</attribute>
+		<attribute>
+			<name>prompt</name>
+			<description>在输入框中显示提示消息。</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<description>输入的值。</description>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<description>搜索类型菜单。每个菜单项都具备一下属性：name：搜索类型名称。selected：自定义默认选中的搜索类型名称。</description>
+		</attribute>
+		<attribute>
+			<name>searcher</name>
+			<description>在用户按下搜索按钮或回车键的时候调用searcher函数。函数结构：function(value,name)。</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>定义是否禁用搜索框。</description>
+		</attribute>
+		<attribute>
+			<name>menus</name>
+			<description>搜索类型菜单数据，当使用此菜单数据时，设定的 menu 值将被覆盖。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>renderSection</name>
 		<tag-class>org.kayura.tags.common.RenderSectionTag</tag-class>
 		<body-content>empty</body-content>
@@ -16,7 +338,7 @@
 			<required>true</required>
 		</attribute>
 	</tag>
-	
+
 	<tag>
 		<name>section</name>
 		<tag-class>org.kayura.tags.common.SectionTag</tag-class>
@@ -27,7 +349,7 @@
 			<required>true</required>
 		</attribute>
 	</tag>
-	
+
 	<tag>
 		<name>tabs</name>
 		<tag-class>org.kayura.tags.easyui.TabsTag</tag-class>
@@ -111,7 +433,7 @@
 			<description>设置为true时，选项卡标题样式改为气泡状。</description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
-		
+
 		<attribute>
 			<name>onLoad</name>
 			<description>在ajax选项卡面板加载完远程数据的时候触发。参数：panel。</description>
@@ -206,7 +528,7 @@
 			<description>在设置为true的时候，选项卡面板会被选中。</description>
 		</attribute>
 	</tag>
-	
+
 	<tag>
 		<name>body</name>
 		<tag-class>org.kayura.tags.easyui.BodyTag</tag-class>
@@ -428,6 +750,10 @@
 		<name>panel</name>
 		<tag-class>org.kayura.tags.easyui.PanelTag</tag-class>
 		<body-content>jsp</body-content>
+		<attribute>
+			<name>id</name>
+			<description>面板的标签ID.</description>
+		</attribute>
 		<attribute>
 			<name>title</name>
 			<description>在面板头部显示的标题文本。</description>

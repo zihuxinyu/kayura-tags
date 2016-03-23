@@ -118,14 +118,14 @@ public class BodyTag extends TagRender {
 			}
 			out.write("</body>\n");
 			doAfterEnd(out);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return Tag.EVAL_PAGE;
 	}
 
 	@Override
-	public void doRenderStart(JspWriter out) {
+	public void doRenderProperty(JspWriter out) {
 	}
 
 	@Override

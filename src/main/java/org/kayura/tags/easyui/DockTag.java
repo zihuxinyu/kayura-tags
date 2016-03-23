@@ -42,7 +42,7 @@ public class DockTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderStart(JspWriter out) throws Exception {
+	public void doRenderProperty(JspWriter out) throws Exception {
 
 	}
 

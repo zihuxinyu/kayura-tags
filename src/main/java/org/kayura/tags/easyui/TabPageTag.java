@@ -38,7 +38,7 @@ public class TabPageTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderStart(JspWriter out) throws Exception {
+	public void doRenderProperty(JspWriter out) throws Exception {
 
 	}
 
