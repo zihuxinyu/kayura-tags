@@ -71,7 +71,7 @@ public final class MenuUtils {
 				sb.append(" style=\"" + e.getStyle() + "\"");
 			}
 
-			if (e.getIsContent()) {
+			if (e.getIsCustom()) {
 
 				sb.append(" class=\"menu-content\">" + e.getContent() + "</div>");
 			} else {

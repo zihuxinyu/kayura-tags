@@ -46,10 +46,6 @@ public abstract class TagRender extends BodyTagSupport {
 	private String classStyle;
 	private String style;
 
-	public String getName() {
-		return "";
-	}
-
 	/**
 	 * 获取 EasyUI 定义的标签样式名.
 	 */
@@ -164,13 +160,6 @@ public abstract class TagRender extends BodyTagSupport {
 			if (!isEmpty(getId())) {
 				out.write(" id=\"" + getId() + "\"");
 			}
-			if (getName() == null) {
-				if (!isEmpty(getId())) {
-					out.write(" name=\"" + getId() + "\"");
-				}
-			} else if (!isEmpty(getName())) {
-				out.write(" name=\"" + getName() + "\"");
-			}
 			if (!isEmpty(getEasyUITag())) {
 				if (!isEmpty(getClassStyle())) {
 					out.write(" class=\"easyui-" + getEasyUITag() + " " + getClassStyle().trim() + "\"");
@@ -195,7 +184,7 @@ public abstract class TagRender extends BodyTagSupport {
 			doRenderBody(out);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.error(e);
+			logger.error(e.getMessage(), e);
 		}
 
 		return EVAL_BODY_INCLUDE;
@@ -205,7 +194,7 @@ public abstract class TagRender extends BodyTagSupport {
 	public int doEndTag() throws JspException {
 		JspWriter out = this.pageContext.getOut();
 		try {
-			out.write("</" + getHtmlTag() + ">\n");
+			out.write("</" + getHtmlTag() + ">");
 			doAfterEnd(out);
 		} catch (Exception e) {
 			e.printStackTrace();

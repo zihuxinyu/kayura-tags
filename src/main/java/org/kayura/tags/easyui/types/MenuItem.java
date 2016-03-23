@@ -16,7 +16,7 @@ import org.kayura.tags.easyui.utils.MenuUtils;
  */
 public class MenuItem {
 
-	public static final String SEPARATOR = "separator";
+	public static final String SEPARATOR = "SEPARATOR";
 	public static final MenuItem SEPMENUITEM = new MenuItem(SEPARATOR);
 
 	private String id;
@@ -29,11 +29,11 @@ public class MenuItem {
 	private String onclick;
 	private String style;
 	private List<MenuItem> items;
-	private Boolean isContent;
+	private Boolean isCustom;
 	private String content;
 
 	public MenuItem() {
-		this.isContent = false;
+		this.isCustom = false;
 		this.items = new ArrayList<MenuItem>();
 	}
 
@@ -153,12 +153,12 @@ public class MenuItem {
 		}
 	}
 
-	public Boolean getIsContent() {
-		return isContent;
+	public Boolean getIsCustom() {
+		return isCustom;
 	}
 
-	public void setIsContent(Boolean isContent) {
-		this.isContent = isContent;
+	public void setIsCustom(Boolean isCustom) {
+		this.isCustom = isCustom;
 	}
 
 	public String getContent() {

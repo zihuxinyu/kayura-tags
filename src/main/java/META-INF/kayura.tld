@@ -7,6 +7,154 @@
 	<uri>http://www.kayura.org/tags/jeasyui</uri>
 
 	<tag>
+		<name>menu</name>
+		<tag-class>org.kayura.tags.easyui.MenuTag</tag-class>
+		<body-content>jsp</body-content>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>Body 样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>menus</name>
+			<description>搜索类型菜单数据。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<description>菜单z-index样式，增加它的值。</description>
+		</attribute>
+		<attribute>
+			<name>left</name>
+			<description>菜单的左边距位置。</description>
+		</attribute>
+		<attribute>
+			<name>top</name>
+			<description>菜单的上边距位置。</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<description>菜单对齐方式，可用值有：'left' 和 'right'。</description>
+		</attribute>
+		<attribute>
+			<name>minWidth</name>
+			<description>菜单的最小宽度。</description>
+		</attribute>
+		<attribute>
+			<name>itemHeight</name>
+			<description>菜单项高度。</description>
+		</attribute>
+		<attribute>
+			<name>duration</name>
+			<description>该属性允许用户自定义隐藏菜单动画的持续时间，以毫秒为单位。</description>
+		</attribute>
+		<attribute>
+			<name>hideOnUnhover</name>
+			<description>当设置为true时，在鼠标离开菜单的时候将自动隐藏菜单。</description>
+		</attribute>
+		<attribute>
+			<name>inline</name>
+			<description>当设置为true时，菜单将相对于父级标签进行定位，否则相对于body进行定位。</description>
+		</attribute>
+		<attribute>
+			<name>fit</name>
+			<description>当设置为true时，菜单尺寸将自动适配父容器。</description>
+		</attribute>
+		<attribute>
+			<name>noline</name>
+			<description>当设置为true时，菜单将不显示图标和文字之间的分割线。</description>
+		</attribute>
+		<attribute>
+			<name>onShow</name>
+			<description>在菜单显示之后触发。</description>
+		</attribute>
+		<attribute>
+			<name>onHide</name>
+			<description>在菜单隐藏之后触发。</description>
+		</attribute>
+		<attribute>
+			<name>onClick</name>
+			<description>在菜单项被点击的时候触发。function menuHandler(item)。</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>submenu</name>
+		<tag-class>org.kayura.tags.easyui.SubMenuTag</tag-class>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<description>菜单项文本。</description>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>Body 样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>显示在菜单项左侧的16x16像素图标的CSS类ID。</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>定义是否禁用菜单项。</description>
+		</attribute>
+		<attribute>
+			<name>isCustom</name>
+			<description>该子菜单内容是否显示为自定义内容。</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>menuitem</name>
+		<tag-class>org.kayura.tags.easyui.MenuItemTag</tag-class>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>菜单项 name，若需响应菜单事件，必需定义该值。</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<description>菜单项文本。</description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>显示在菜单项左侧的16x16像素图标的CSS类ID。</description>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<description>设置点击菜单项时候的页面位置。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>定义是否禁用菜单项。</description>
+		</attribute>
+		<attribute>
+			<name>isSeparator</name>
+			<description>标注此菜单是否为间隔符。</description>
+		</attribute>
+		<attribute>
+			<name>selected</name>
+			<description>是否默认为选中的项。</description>
+		</attribute>
+		<attribute>
+			<name>onClick</name>
+			<description>在点击菜单项的时候调用的函数。</description>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>splitbutton</name>
 		<tag-class>org.kayura.tags.easyui.SplitButtonTag</tag-class>
 		<body-content>empty</body-content>
@@ -68,7 +216,6 @@
 			<description>下拉菜单数据。</description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
-		
 		<attribute>
 			<name>onClick</name>
 			<description>在点击按钮的时候触发。</description>
@@ -205,83 +352,6 @@
 		<attribute>
 			<name>onClick</name>
 			<description>在点击按钮的时候触发。</description>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>menu</name>
-		<tag-class>org.kayura.tags.easyui.MenuTag</tag-class>
-		<body-content>empty</body-content>
-		<attribute>
-			<name>id</name>
-			<description>菜单标签ID</description>
-			<required>true</required>
-		</attribute>
-		<attribute>
-			<name>style</name>
-			<description>Body 样式定义.</description>
-		</attribute>
-		<attribute>
-			<name>menus</name>
-			<description>搜索类型菜单数据。</description>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-		<attribute>
-			<name>zIndex</name>
-			<description>菜单z-index样式，增加它的值。</description>
-		</attribute>
-		<attribute>
-			<name>left</name>
-			<description>菜单的左边距位置。</description>
-		</attribute>
-		<attribute>
-			<name>top</name>
-			<description>菜单的上边距位置。</description>
-		</attribute>
-		<attribute>
-			<name>align</name>
-			<description>菜单对齐方式，可用值有：'left' 和 'right'。</description>
-		</attribute>
-		<attribute>
-			<name>minWidth</name>
-			<description>菜单的最小宽度。</description>
-		</attribute>
-		<attribute>
-			<name>itemHeight</name>
-			<description>菜单项高度。</description>
-		</attribute>
-		<attribute>
-			<name>duration</name>
-			<description>该属性允许用户自定义隐藏菜单动画的持续时间，以毫秒为单位。</description>
-		</attribute>
-		<attribute>
-			<name>hideOnUnhover</name>
-			<description>当设置为true时，在鼠标离开菜单的时候将自动隐藏菜单。</description>
-		</attribute>
-		<attribute>
-			<name>inline</name>
-			<description>当设置为true时，菜单将相对于父级标签进行定位，否则相对于body进行定位。</description>
-		</attribute>
-		<attribute>
-			<name>fit</name>
-			<description>当设置为true时，菜单尺寸将自动适配父容器。</description>
-		</attribute>
-		<attribute>
-			<name>noline</name>
-			<description>当设置为true时，菜单将不显示图标和文字之间的分割线。</description>
-		</attribute>
-		
-		<attribute>
-			<name>onShow</name>
-			<description>在菜单显示之后触发。</description>
-		</attribute>
-		<attribute>
-			<name>onHide</name>
-			<description>在菜单隐藏之后触发。</description>
-		</attribute>
-		<attribute>
-			<name>onClick</name>
-			<description>在菜单项被点击的时候触发。function menuHandler(item)。</description>
 		</attribute>
 	</tag>
 

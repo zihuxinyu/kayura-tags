@@ -48,11 +48,6 @@ public class TreeTag extends TagRender {
 	}
 
 	@Override
-	public String getName() {
-		return "";
-	}
-
-	@Override
 	public Map<String, Object> makeOptions() {
 
 		Map<String, Object> map = new HashMap<String, Object>();
