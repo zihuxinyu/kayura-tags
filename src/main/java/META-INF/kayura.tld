@@ -7,6 +7,64 @@
 	<uri>http://www.kayura.org/tags/jeasyui</uri>
 
 	<tag>
+		<name>validatebox</name>
+		<tag-class>org.kayura.tags.easyui.ValidateBoxTag</tag-class>
+		<body-content>jsp</body-content>
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>name 标签.</description>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<description>指定 input.type 的值.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<description>定义为必填字段。</description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>延迟到最后验证输入值。</description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<description>当文本框未填写时出现的提示信息。</description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<description>当文本框的内容被验证为无效时出现的提示。</description>
+		</attribute>
+		<attribute>
+			<name>tipPosition</name>
+			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<description>提示框在水平方向上位移。</description>
+		</attribute>
+		<attribute>
+			<name>novalidate</name>
+			<description>为true时关闭验证功能。</description>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>accordion</name>
 		<tag-class>org.kayura.tags.easyui.AccordionTag</tag-class>
 		<body-content>jsp</body-content>
@@ -67,7 +125,7 @@
 			<description>在面板被移除的时候触发。函数定义：function(title,index)。</description>
 		</attribute>
 	</tag>
-	
+
 	<tag>
 		<name>sheet</name>
 		<tag-class>org.kayura.tags.easyui.SheetTag</tag-class>
@@ -384,7 +442,7 @@
 			<description>该子菜单内容是否显示为自定义内容。</description>
 		</attribute>
 	</tag>
-	
+
 	<tag>
 		<name>menuitem</name>
 		<tag-class>org.kayura.tags.easyui.MenuItemTag</tag-class>
@@ -566,7 +624,7 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
-		
+
 	<tag>
 		<name>linkbutton</name>
 		<tag-class>org.kayura.tags.easyui.LinkButtonTag</tag-class>
@@ -621,7 +679,7 @@
 			<name>size</name>
 			<description>按钮大小。可用值有：'small','large'。</description>
 		</attribute>
-		
+
 		<attribute>
 			<name>onClick</name>
 			<description>在点击按钮的时候触发。</description>

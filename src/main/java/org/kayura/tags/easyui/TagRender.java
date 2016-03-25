@@ -59,6 +59,15 @@ public abstract class TagRender extends BodyTagSupport {
 	}
 
 	/**
+	 * 表示为一个无Body的标签, 返回 true &lt;input /&gt; 否则如 &lt;div&gt;&lt;/div&gt;
+	 * 
+	 * @return
+	 */
+	public Boolean skipBody() {
+		return false;
+	}
+
+	/**
 	 * 当生成标签时的用于添加属性，如：&lt;div {动作} &gt;&lt;/div&gt;
 	 * 
 	 * @param writer
@@ -155,7 +164,6 @@ public abstract class TagRender extends BodyTagSupport {
 		JspWriter out = this.pageContext.getOut();
 		try {
 			doBeforeStart(out);
-
 			out.write("<" + this.getHtmlTag());
 			if (!isEmpty(getId())) {
 				out.write(" id=\"" + getId() + "\"");
@@ -171,7 +179,6 @@ public abstract class TagRender extends BodyTagSupport {
 					out.write(" class=\"" + getClassStyle().trim() + "\"");
 				}
 			}
-			doRenderProperty(out);
 			if (!isEmpty(getStyle())) {
 				out.write(" style=\"" + getStyle() + "\"");
 			}
@@ -180,8 +187,13 @@ public abstract class TagRender extends BodyTagSupport {
 				options = options.replace('\'', '"');
 				out.write(" data-options='" + options + "'");
 			}
-			out.write(">");
-			doRenderBody(out);
+			doRenderProperty(out);
+			if (skipBody()) {
+				out.write("/>");
+			} else {
+				out.write(">");
+				doRenderBody(out);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e.getMessage(), e);
@@ -194,7 +206,9 @@ public abstract class TagRender extends BodyTagSupport {
 	public int doEndTag() throws JspException {
 		JspWriter out = this.pageContext.getOut();
 		try {
-			out.write("</" + getHtmlTag() + ">");
+			if (!skipBody()) {
+				out.write("</" + getHtmlTag() + ">");
+			}
 			doAfterEnd(out);
 		} catch (Exception e) {
 			e.printStackTrace();
