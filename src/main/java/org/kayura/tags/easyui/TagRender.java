@@ -63,7 +63,7 @@ public abstract class TagRender extends BodyTagSupport {
 	 * 
 	 * @return
 	 */
-	public Boolean skipBody() {
+	public Boolean emptyBody() {
 		return false;
 	}
 
@@ -127,7 +127,7 @@ public abstract class TagRender extends BodyTagSupport {
 						if (!isEmpty(sv)) {
 							sb.append("," + k + ":" + v.toString());
 						}
-					} else if (v instanceof Integer || v instanceof Boolean) {
+					} else if (v instanceof Integer || v instanceof Boolean || v instanceof Double) {
 						sb.append("," + k + ":" + v);
 					} else if (v instanceof String || v instanceof Enum) {
 						sb.append("," + k + ":\"" + v + "\"");
@@ -188,7 +188,7 @@ public abstract class TagRender extends BodyTagSupport {
 				out.write(" data-options='" + options + "'");
 			}
 			doRenderProperty(out);
-			if (skipBody()) {
+			if (emptyBody()) {
 				out.write("/>");
 			} else {
 				out.write(">");
@@ -206,7 +206,7 @@ public abstract class TagRender extends BodyTagSupport {
 	public int doEndTag() throws JspException {
 		JspWriter out = this.pageContext.getOut();
 		try {
-			if (!skipBody()) {
+			if (!emptyBody()) {
 				out.write("</" + getHtmlTag() + ">");
 			}
 			doAfterEnd(out);

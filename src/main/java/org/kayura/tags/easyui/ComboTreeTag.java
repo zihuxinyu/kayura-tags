@@ -4,24 +4,23 @@
  */
 package org.kayura.tags.easyui;
 
-import java.util.HashMap;
 import java.util.Map;
-
-import javax.servlet.jsp.JspWriter;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.types.RawString;
 
 /**
- * EasyUI Tree 组件, 支持 1.4.3 版。
+ * ComboTreeTag
  *
  * @author liangxia@live.com
  */
-public class TreeTag extends TagRender {
+public class ComboTreeTag extends ComboTag {
 
-	private static final long serialVersionUID = 7276686505986997478L;
-	private static final Log logger = LogFactory.getLog(TreeTag.class);
+	private static final long serialVersionUID = 8115052203978775212L;
+	private static final Log logger = LogFactory.getLog(ComboTreeTag.class);
+
+	private Boolean editable;
 
 	private String url;
 	private String method;
@@ -39,19 +38,11 @@ public class TreeTag extends TagRender {
 	private String loadFilter;
 
 	@Override
-	public String getEasyUITag() {
-		return "tree";
-	}
-
-	@Override
-	public String getHtmlTag() {
-		return "ul";
-	}
-
-	@Override
 	public Map<String, Object> makeOptions() {
 
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map = super.makeOptions();
+
+		putMap(map, "editable", editable);
 
 		if (!isEmpty(method)) {
 			if (METHOD_POST.equals(method.toUpperCase()) || METHOD_GET.equals(method.toUpperCase())) {
@@ -89,14 +80,12 @@ public class TreeTag extends TagRender {
 		return map;
 	}
 
-	@Override
-	public void doRenderProperty(JspWriter out) {
-
+	public Boolean getEditable() {
+		return editable;
 	}
 
-	@Override
-	public void doRenderBody(JspWriter out) {
-
+	public void setEditable(Boolean editable) {
+		this.editable = editable;
 	}
 
 	public String getUrl() {

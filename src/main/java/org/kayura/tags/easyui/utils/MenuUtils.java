@@ -17,7 +17,7 @@ public final class MenuUtils {
 
 	public static Boolean isEmpty(String value) {
 
-		return value == null || "".equals(value.trim());
+		return value == null || value.trim().length() == 0;
 	}
 
 	public static String html(List<MenuItem> menus) {
@@ -75,7 +75,7 @@ public final class MenuUtils {
 
 				sb.append(" class=\"menu-content\">" + e.getContent() + "</div>");
 			} else {
-				
+
 				if (e.hasOptions()) {
 					sb.append(" data-options=\"");
 

@@ -67,6 +67,7 @@
 	<tag>
 		<name>accordion</name>
 		<tag-class>org.kayura.tags.easyui.AccordionTag</tag-class>
+		<description>分类空间允许用户使用多面板。并使用 sheet 创建面板内容。</description>
 		<body-content>jsp</body-content>
 		<attribute>
 			<name>id</name>
@@ -754,6 +755,7 @@
 	<tag>
 		<name>tabs</name>
 		<tag-class>org.kayura.tags.easyui.TabsTag</tag-class>
+		<description>选项卡显示一批面板。但在同一个时间只会显示一个面板。使用 tabpage 创建选项卡面板。</description>
 		<body-content>JSP</body-content>
 		<attribute>
 			<name>id</name>

@@ -45,7 +45,7 @@ public class ValidateBoxTag extends TagRender {
 	}
 
 	@Override
-	public Boolean skipBody() {
+	public Boolean emptyBody() {
 		return true;
 	}
 
