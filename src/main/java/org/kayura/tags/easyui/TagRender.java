@@ -4,6 +4,7 @@
  */
 package org.kayura.tags.easyui;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -14,6 +15,7 @@ import javax.servlet.jsp.tagext.Tag;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.kayura.tags.easyui.types.Toolbar;
 import org.kayura.tags.types.RawString;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -106,6 +108,34 @@ public abstract class TagRender extends BodyTagSupport {
 		return s;
 	}
 
+	public String json(List<Toolbar> toolbars) {
+
+		if (toolbars == null || toolbars.isEmpty()) {
+			return "";
+		}
+
+		StringBuilder sb = new StringBuilder();
+		Boolean hasNext = false;
+
+		sb.append("[");
+		for (Toolbar t : toolbars) {
+
+			if (hasNext) {
+				sb.append(",");
+			}
+
+			sb.append("{");
+			sb.append("iconCls:\"" + t.getIconCls() + "\"");
+			sb.append("handler:function(){ " + t.getHandler() + " }");
+			sb.append("}");
+
+			hasNext = true;
+		}
+		sb.append("]");
+
+		return sb.toString();
+	}
+
 	/**
 	 * 将 EasyUI 选项参数集转换为字符表示形式.
 	 * 
@@ -151,6 +181,10 @@ public abstract class TagRender extends BodyTagSupport {
 	}
 
 	public void doBeforeStart(JspWriter out) throws Exception {
+
+	}
+
+	public void doBeforeEnd(JspWriter out) throws Exception {
 
 	}
 
@@ -207,6 +241,7 @@ public abstract class TagRender extends BodyTagSupport {
 		JspWriter out = this.pageContext.getOut();
 		try {
 			if (!emptyBody()) {
+				doBeforeEnd(out);
 				out.write("</" + getHtmlTag() + ">");
 			}
 			doAfterEnd(out);

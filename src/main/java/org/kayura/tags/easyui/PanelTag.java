@@ -65,7 +65,7 @@ public class PanelTag extends TagRender {
 	private String extractor;
 	private String method;
 
-	private Map<String, Object> queryParams;
+	private Object queryParams;
 	private String loader;
 
 	// 事件定义.
@@ -122,14 +122,6 @@ public class PanelTag extends TagRender {
 	}
 
 	@Override
-	public void doRenderProperty(JspWriter out) throws IOException {
-
-		if (!isEmpty(getTitle())) {
-			out.write(" title=\"" + getTitle() + "\"");
-		}
-	}
-
-	@Override
 	public void doRenderBody(JspWriter out) throws IOException {
 
 		if (!isEmpty(getHeader())) {
@@ -142,6 +134,7 @@ public class PanelTag extends TagRender {
 
 		Map<String, Object> map = new HashMap<String, Object>();
 
+		putMap(map, "title", title);
 		putMap(map, "iconCls", iconCls);
 		putMap(map, "left", left);
 		putMap(map, "top", top);
@@ -495,11 +488,11 @@ public class PanelTag extends TagRender {
 		this.method = method;
 	}
 
-	public Map<String, Object> getQueryParams() {
+	public Object getQueryParams() {
 		return queryParams;
 	}
 
-	public void setQueryParams(Map<String, Object> queryParams) {
+	public void setQueryParams(Object queryParams) {
 		this.queryParams = queryParams;
 	}
 
