@@ -7,9 +7,23 @@
 	<uri>http://www.kayura.org/tags/jeasyui</uri>
 
 	<tag>
+		<name>columns</name>
+		<tag-class>org.kayura.tags.easyui.ColumnsTag</tag-class>
+		<body-content>jsp</body-content>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>column</name>
 		<tag-class>org.kayura.tags.easyui.ColumnTag</tag-class>
 		<body-content>jsp</body-content>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
 		<attribute>
 			<name>title</name>
 			<description>列标题文本。</description>
@@ -17,7 +31,6 @@
 		<attribute>
 			<name>field</name>
 			<description>列字段名称。</description>
-			<required>true</required>
 		</attribute>
 		<attribute>
 			<name>width</name>
@@ -63,7 +76,7 @@
 			<name>checkbox</name>
 			<description>如果为true，则显示复选框。该复选框列固定宽度。</description>
 		</attribute>
-		
+
 		<attribute>
 			<name>formatter</name>
 			<description>单元格formatter(格式化器)函数，带3个参数：value：字段值。row：行记录数据。index: 行索引。</description>
@@ -92,7 +105,11 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 			<name>id</name>
 			<description>面板的标签ID.</description>
 		</attribute>
-		<!--  Panel 属性. -->
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<!-- Panel 属性. -->
 		<attribute>
 			<name>title</name>
 			<description>在面板头部显示的标题文本。</description>
@@ -283,7 +300,12 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 			</description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
-		<!--  DataGrid 属性. -->
+		<!-- DataGrid 属性. -->
+		<attribute>
+			<name>customHeader</name>
+			<description>是否使用自定义的方式来组织表格标题，设置为 true 将需要添加 &lt;k:columns&gt; 标签。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
 		<attribute>
 			<name>columns</name>
 			<description>DataGrid列配置对象，详见列属性说明中更多的细节。</description>

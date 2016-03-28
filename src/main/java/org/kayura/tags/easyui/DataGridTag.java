@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.jsp.JspWriter;
-import javax.servlet.jsp.tagext.BodyContent;
 
 import org.kayura.tags.types.RawString;
 
@@ -20,6 +19,8 @@ import org.kayura.tags.types.RawString;
 public class DataGridTag extends PanelTag {
 
 	private static final long serialVersionUID = -5756005211714745895L;
+
+	private Boolean customHeader;
 
 	private Object columns;
 	private Object frozenColumns;
@@ -213,41 +214,29 @@ public class DataGridTag extends PanelTag {
 	@Override
 	public void doRenderBody(JspWriter out) throws IOException {
 
-		BodyContent bc = getBodyContent();
-		if (bc != null) {
+		out.write("<thead>");
 
-			String content = bc.getString();
-
-			if (!content.contains("<thead")) {
-				out.write("<thead>");
-			}
-
-			if (!content.contains("<tr")) {
-				out.write("<tr>");
-			}
-		} else {
-			out.write("<thead><tr>");
+		if (customHeader == null || customHeader == false) {
+			out.write("<tr>");
 		}
 	}
 
 	@Override
 	public void doBeforeEnd(JspWriter out) throws Exception {
 
-		BodyContent bc = getBodyContent();
-		if (bc != null) {
-
-			String content = bc.getString();
-
-			if (!content.contains("</tr>")) {
-				out.write("</tr>");
-			}
-
-			if (!content.contains("</thead>")) {
-				out.write("</thead>");
-			}
-		} else {
-			out.write("</tr></thead>");
+		if (customHeader == null || customHeader == false) {
+			out.write("</tr>");
 		}
+
+		out.write("</thead>");
+	}
+
+	public Boolean getCustomHeader() {
+		return customHeader;
+	}
+
+	public void setCustomHeader(Boolean customHeader) {
+		this.customHeader = customHeader;
 	}
 
 	public Object getColumns() {

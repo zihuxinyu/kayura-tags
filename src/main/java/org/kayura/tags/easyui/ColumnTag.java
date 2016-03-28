@@ -7,6 +7,8 @@ package org.kayura.tags.easyui;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.jsp.JspWriter;
+
 import org.kayura.tags.types.RawString;
 
 /**
@@ -48,15 +50,28 @@ public class ColumnTag extends TagRender {
 	}
 
 	@Override
+	public void doRenderProperty(JspWriter out) throws Exception {
+
+/*		if (rowspan != null) {
+			out.write(" rowspan=\"" + rowspan + "\"");
+		}
+
+		if (colspan != null) {
+			out.write(" colspan=\"" + colspan + "\"");
+		}*/
+	}
+
+	@Override
 	public Map<String, Object> makeOptions() {
 
 		Map<String, Object> map = new HashMap<String, Object>();
 
+		putMap(map, "rowspan", rowspan);
+		putMap(map, "colspan", colspan);
+		
 		putMap(map, "title", title);
 		putMap(map, "field", field);
 		putMap(map, "width", width);
-		putMap(map, "rowspan", rowspan);
-		putMap(map, "colspan", colspan);
 		putMap(map, "align", align);
 		putMap(map, "halign", halign);
 		putMap(map, "sortable", sortable);
