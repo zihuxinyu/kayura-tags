@@ -38,6 +38,17 @@ public class ComboTreeTag extends ComboTag {
 	private String loadFilter;
 
 	@Override
+	public String getEasyUITag() {
+		return "combotree";
+	}
+	
+	@Override
+	public Boolean emptyBody() {
+
+		return !isEmpty(url) || data != null;
+	}
+	
+	@Override
 	public Map<String, Object> makeOptions() {
 
 		Map<String, Object> map = super.makeOptions();

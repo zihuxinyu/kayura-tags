@@ -5,7 +5,1007 @@
 	<tlib-version>1.0</tlib-version>
 	<short-name>jeasyui-tags</short-name>
 	<uri>http://www.kayura.org/tags/jeasyui</uri>
+	
+	<!-- combotree -->
+	<tag>
+		<name>combotree</name>
+		<tag-class>org.kayura.tags.easyui.ComboTreeTag</tag-class>
+		<description>
+		<![CDATA[扩展自$.fn.combo.defaults和$.fn.tree.defaults。使用$.fn.combotree.defaults重写默认值对象。<br><br>
+		树形下拉框结合选择控件和下拉树控件。它与combobox(下拉列表框)类似，但是将下拉列表框的列表替换成了树形控件。该控件支持树状态复选框，方便多选操作。 ]]>
+		</description>
+		<body-content>jsp</body-content>
+		<!-- html -->
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>name 标签.</description>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<description>指定 input.type 的值.</description>
+		</attribute>
+		<!-- validatebox -->
+		<attribute>
+			<name>required</name>
+			<description>定义为必填字段。</description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>延迟到最后验证输入值。</description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<description>当文本框未填写时出现的提示信息。</description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<description>当文本框的内容被验证为无效时出现的提示。</description>
+		</attribute>
+		<attribute>
+			<name>tipPosition</name>
+			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<description>提示框在水平方向上位移。</description>
+		</attribute>
+		<attribute>
+			<name>novalidate</name>
+			<description>为true时关闭验证功能。</description>
+		</attribute>
+		<!-- combo 属性 -->
+		<attribute>
+			<name>width</name>
+			<description>组件的宽度。</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>组件的高度。（该属性自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelWidth</name>
+			<description>下拉面板宽度。</description>
+		</attribute>
+		<attribute>
+			<name>panelHeight</name>
+			<description>下拉面板高度。</description>
+		</attribute>
+		<attribute>
+			<name>panelMinWidth</name>
+			<description>下拉面板最小宽度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMaxWidth</name>
+			<description>下拉面板最大宽度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMinHeight</name>
+			<description>下拉面板最小高度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMaxHeight</name>
+			<description>下拉面板最大高度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelAlign</name>
+			<description>面板对齐方式。可用值有：'left','right'。（该属性自1.3.6版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>multiple</name>
+			<description>定义是否支持多选。</description>
+		</attribute>
+		<attribute>
+			<name>selectOnNavigation</name>
+			<description>定义是否允许使用键盘导航来选择项目。（该属性自1.3.3版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>separator</name>
+			<description>在多选的时候使用何种分隔符进行分割。</description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<description>定义用户是否可以直接输入文本到字段中。</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>设置启用/禁用字段。</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<description>设置该字段为读写/只读模式。（该属性自1.3.3版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>hasDownArrow</name>
+			<description>定义是否显示向下箭头按钮。</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<description>字段的默认值。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>最后一次输入事件与执行搜索之间的延迟间隔（执行自动完成功能的延迟间隔）</description>
+		</attribute>
+		<attribute>
+			<name>keyHandler</name>
+			<description>在用户按下键的时候调用一个函数。该按键处理器被定义为：
+			keyHandler: { up: function(){}, down: function(){}, enter: function(){}, query: function(q){} }
+			</description>
+		</attribute>
+		<!-- combo 事件 -->
+		<attribute>
+			<name>onShowPanel</name>
+			<description>当下拉面板显示的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onHidePanel</name>
+			<description>当下拉面板隐藏的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onChange</name>
+			<description>当字段值改变的时候触发。参数：newValue, oldValue </description>
+		</attribute>
+		<!-- combotree 属性 -->
+		<attribute>
+			<name>editable</name>
+			<description>定义用户是否可以直接输入文本到字段中。</description>
+		</attribute>
+		<!-- tree 属性 -->
+		<attribute>
+			<name>url</name>
+			<description>检索远程数据的URL地址。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<description>检索数据的HTTP方法。（默认 POST / GET）</description>
+		</attribute>
+		<attribute>
+			<name>animate</name>
+			<description>定义节点在展开或折叠的时候是否显示动画效果。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>checkbox</name>
+			<description>定义是否在每一个借点之前都显示复选框。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cascadeCheck</name>
+			<description>定义是否层叠选中状态。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onlyLeafCheck</name>
+			<description>定义是否只在末级节点之前显示复选框。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>lines</name>
+			<description>定义是否显示树控件上的虚线。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>dnd</name>
+			<description>定义是否启用拖拽功能。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>data</name>
+			<description>节点数据加载。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>queryParams</name>
+			<description>在请求远程数据的时候增加查询参数并发送到服务器。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<description>定义如何渲染节点的文本，函数定义：function(node)</description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<description>定义如何过滤本地展示的数据，返回true将允许节点进行展示。</description>
+		</attribute>
+		<attribute>
+			<name>loader</name>
+			<description>定义如何从远程服务器加载数据。返回false可以忽略本操作。函数定义：function(param,success,error)</description>
+		</attribute>
+		<attribute>
+			<name>loadFilter</name>
+			<description>返回过滤过的数据进行展示。返回数据是标准树格式。函数定义：function(data,parent)</description>
+		</attribute>
+		<!-- tree 事件 -->
+		<attribute>
+			<name>onClick</name>
+			<description>在用户点击一个节点的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onDblClick</name>
+			<description>在用户双击一个节点的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeLoad</name>
+			<description>在请求加载远程数据之前触发，返回false可以取消加载操作。参数：node, param </description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<description>在数据加载成功以后触发。参数：node, data </description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<description>在数据加载失败的时候触发，arguments参数和jQuery的$.ajax()函数里面的'error'回调函数的参数相同。</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<description>在节点展开之前触发，返回false可以取消展开操作。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<description>在节点展开的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<description>在节点折叠之前触发，返回false可以取消折叠操作。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<description>在节点折叠的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCheck</name>
+			<description>在用户点击勾选复选框之前触发，返回false可以取消选择动作。参数：node, checked 。（该事件自1.3.1版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onCheck</name>
+			<description>在用户点击勾选复选框的时候触发。参数：node, checked 。</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeSelect</name>
+			<description>在用户选择一个节点之前触发，返回false可以取消选择动作。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<description>在用户选择节点的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onContextMenu</name>
+			<description>在右键点击节点的时候触发。参数：e, node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDrag</name>
+			<description>在开始拖动节点之前触发，返回false可以拒绝拖动。参数：node 。（该事件自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onStartDrag</name>
+			<description>在开始拖动节点的时候触发。参数：node 。（该事件自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onStopDrag</name>
+			<description>在停止拖动节点的时候触发。参数：node 。（该事件自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onDragEnter</name>
+			<description>
+			<![CDATA[在拖动一个节点进入到某个目标节点并释放的时候触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			（该事件自1.3.2版开始可用）]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onDragOver</name>
+			<description>
+			<![CDATA[在拖动一个节点经过某个目标节点并释放的时候触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			（该事件自1.3.2版开始可用）]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onDragLeave</name>
+			<description>
+			<![CDATA[在拖动一个节点离开某个目标节点并释放的时候触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			（该事件自1.3.2版开始可用）]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDrop</name>
+			<description>
+			<![CDATA[在拖动一个节点之前触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			point：表示哪一种拖动操作，可用值有：'append','top' 或 'bottom'。<br>
+			（该事件自1.3.3版开始可用）]]>
+		</description>
+		</attribute>
+		<attribute>
+			<name>onDrop</name>
+			<description>
+			<![CDATA[当节点位置被拖动时触发。<br>
+			target：DOM对象，需要被拖动动的目标节点。<br>
+			source：源节点。<br>
+			point：表示哪一种拖动操作，可用值有：'append','top' 或 'bottom'。]]>
+		</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeEdit</name>
+			<description>在编辑节点之前触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onAfterEdit</name>
+			<description>在编辑节点之后触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onCancelEdit</name>
+			<description>在取消编辑操作的时候触发。参数：node </description>
+		</attribute>
+	</tag>
+	
+	<!-- combobox -->
+	<tag>
+		<name>combobox</name>
+		<tag-class>org.kayura.tags.easyui.ComboBoxTag</tag-class>
+		<body-content>jsp</body-content>
+		<!-- html -->
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>name 标签.</description>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<description>指定 input.type 的值.</description>
+		</attribute>
+		<!-- validatebox -->
+		<attribute>
+			<name>required</name>
+			<description>定义为必填字段。</description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>延迟到最后验证输入值。</description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<description>当文本框未填写时出现的提示信息。</description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<description>当文本框的内容被验证为无效时出现的提示。</description>
+		</attribute>
+		<attribute>
+			<name>tipPosition</name>
+			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<description>提示框在水平方向上位移。</description>
+		</attribute>
+		<attribute>
+			<name>novalidate</name>
+			<description>为true时关闭验证功能。</description>
+		</attribute>
+		<!-- combo 属性 -->
+		<attribute>
+			<name>width</name>
+			<description>组件的宽度。</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>组件的高度。（该属性自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelWidth</name>
+			<description>下拉面板宽度。</description>
+		</attribute>
+		<attribute>
+			<name>panelHeight</name>
+			<description>下拉面板高度。</description>
+		</attribute>
+		<attribute>
+			<name>panelMinWidth</name>
+			<description>下拉面板最小宽度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMaxWidth</name>
+			<description>下拉面板最大宽度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMinHeight</name>
+			<description>下拉面板最小高度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMaxHeight</name>
+			<description>下拉面板最大高度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelAlign</name>
+			<description>面板对齐方式。可用值有：'left','right'。（该属性自1.3.6版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>multiple</name>
+			<description>定义是否支持多选。</description>
+		</attribute>
+		<attribute>
+			<name>selectOnNavigation</name>
+			<description>定义是否允许使用键盘导航来选择项目。（该属性自1.3.3版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>separator</name>
+			<description>在多选的时候使用何种分隔符进行分割。</description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<description>定义用户是否可以直接输入文本到字段中。</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>设置启用/禁用字段。</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<description>设置该字段为读写/只读模式。（该属性自1.3.3版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>hasDownArrow</name>
+			<description>定义是否显示向下箭头按钮。</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<description>字段的默认值。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>最后一次输入事件与执行搜索之间的延迟间隔（执行自动完成功能的延迟间隔）</description>
+		</attribute>
+		<attribute>
+			<name>keyHandler</name>
+			<description>在用户按下键的时候调用一个函数。该按键处理器被定义为：
+			keyHandler: { up: function(){}, down: function(){}, enter: function(){}, query: function(q){} }
+			</description>
+		</attribute>
+		<!-- combo 事件 -->
+		<attribute>
+			<name>onShowPanel</name>
+			<description>当下拉面板显示的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onHidePanel</name>
+			<description>当下拉面板隐藏的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onChange</name>
+			<description>当字段值改变的时候触发。参数：newValue, oldValue </description>
+		</attribute>
+		<!-- combobox 属性 -->
+		<attribute>
+			<name>valueField</name>
+			<description>基础数据值名称绑定到该下拉列表框。</description>
+		</attribute>
+		<attribute>
+			<name>textField</name>
+			<description>基础数据字段名称绑定到该下拉列表框。</description>
+		</attribute>
+		<attribute>
+			<name>groupField</name>
+			<description>指定分组的字段名称。（该属性自1.3.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>groupFormatter</name>
+			<description>返回格式化后的分组标题文本，以显示分组项（该属性自1.3.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>mode</name>
+			<description>定义了当文本改变时如何读取列表数据。设置为'remote'时，下拉列表框将会从服务器加载数据。当设置为“remote”模式时，用户输入将被发送到名为'q'的HTTP请求参数到服务器检索新数据。</description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<description>通过URL加载远程列表数据。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<description>HTTP方法检索数据(POST / GET)。</description>
+		</attribute>
+		<attribute>
+			<name>data</name>
+			<description>数据列表加载。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>queryParams</name>
+			<description>在向远程服务器请求数据的时候可以通过该属性像服务器端发送额外的参数。（该属性自1.4.2版开始可用）</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<description>定义当'mode'设置为'local'时如何过滤本地数据，函数有2个参数：q：用户输入的文本。row：列表行数据。返回true的时候允许行显示。</description>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<description>定义如何渲染行。该函数接受1个参数：row。 </description>
+		</attribute>
+		<attribute>
+			<name>loader</name>
+			<description>定义了如何从远程服务器加载数据。返回false可以忽略该动作。该函数具备如下参数：param：传递到远程服务器的参数对象。success(data)：在检索数据成功的时候调用该回调函数。error()：在检索数据失败的时候调用该回调函数。</description>
+		</attribute>
+		<attribute>
+			<name>loadFilter</name>
+			<description>返回过滤后的数据并显示。（该属性自1.3.3版开始可用）</description>
+		</attribute>
+		<!-- combobox 事件 -->
+		<attribute>
+			<name>onBeforeLoad</name>
+			<description>在请求加载数据之前触发，返回false取消该加载动作。 </description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<description>在加载远程数据成功的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<description>在加载远程数据失败的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<description>在用户选择列表项的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onUnselect</name>
+			<description>在用户取消选择列表项的时候触发。</description>
+		</attribute>
+	</tag>
+	
+	<!-- combo -->
+	<tag>
+		<name>combo</name>
+		<tag-class>org.kayura.tags.easyui.ComboTag</tag-class>
+		<body-content>jsp</body-content>
+		<!-- html -->
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>name 标签.</description>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<description>指定 input.type 的值.</description>
+		</attribute>
+		<!-- validatebox -->
+		<attribute>
+			<name>required</name>
+			<description>定义为必填字段。</description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>延迟到最后验证输入值。</description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<description>当文本框未填写时出现的提示信息。</description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<description>当文本框的内容被验证为无效时出现的提示。</description>
+		</attribute>
+		<attribute>
+			<name>tipPosition</name>
+			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<description>提示框在水平方向上位移。</description>
+		</attribute>
+		<attribute>
+			<name>novalidate</name>
+			<description>为true时关闭验证功能。</description>
+		</attribute>
+		<!-- combo 属性 -->
+		<attribute>
+			<name>width</name>
+			<description>组件的宽度。</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>组件的高度。（该属性自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelWidth</name>
+			<description>下拉面板宽度。</description>
+		</attribute>
+		<attribute>
+			<name>panelHeight</name>
+			<description>下拉面板高度。</description>
+		</attribute>
+		<attribute>
+			<name>panelMinWidth</name>
+			<description>下拉面板最小宽度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMaxWidth</name>
+			<description>下拉面板最大宽度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMinHeight</name>
+			<description>下拉面板最小高度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelMaxHeight</name>
+			<description>下拉面板最大高度。（该属性自1.4版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>panelAlign</name>
+			<description>面板对齐方式。可用值有：'left','right'。（该属性自1.3.6版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>multiple</name>
+			<description>定义是否支持多选。</description>
+		</attribute>
+		<attribute>
+			<name>selectOnNavigation</name>
+			<description>定义是否允许使用键盘导航来选择项目。（该属性自1.3.3版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>separator</name>
+			<description>在多选的时候使用何种分隔符进行分割。</description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<description>定义用户是否可以直接输入文本到字段中。</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>设置启用/禁用字段。</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<description>设置该字段为读写/只读模式。（该属性自1.3.3版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>hasDownArrow</name>
+			<description>定义是否显示向下箭头按钮。</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<description>字段的默认值。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>最后一次输入事件与执行搜索之间的延迟间隔（执行自动完成功能的延迟间隔）</description>
+		</attribute>
+		<attribute>
+			<name>keyHandler</name>
+			<description>在用户按下键的时候调用一个函数。该按键处理器被定义为：
+			keyHandler: { up: function(){}, down: function(){}, enter: function(){}, query: function(q){} }
+			</description>
+		</attribute>
+		<!-- combo 事件 -->
+		<attribute>
+			<name>onShowPanel</name>
+			<description>当下拉面板显示的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onHidePanel</name>
+			<description>当下拉面板隐藏的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onChange</name>
+			<description>当字段值改变的时候触发。参数：newValue, oldValue </description>
+		</attribute>
+	</tag>
 
+	<!-- textbox -->
+	<tag>
+		<name>textbox</name>
+		<tag-class>org.kayura.tags.easyui.TextBoxTag</tag-class>
+		<body-content>jsp</body-content>
+		<!-- HTML 属性 -->
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>name 标签.</description>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<!-- ValidateBox 属性 -->
+		<attribute>
+			<name>type</name>
+			<description>文本框类型。可用值有："text"和"password"。</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<description>定义为必填字段。</description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>延迟到最后验证输入值。</description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<description>当文本框未填写时出现的提示信息。</description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<description>当文本框的内容被验证为无效时出现的提示。</description>
+		</attribute>
+		<attribute>
+			<name>tipPosition</name>
+			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<description>提示框在水平方向上位移。</description>
+		</attribute>
+		<attribute>
+			<name>novalidate</name>
+			<description>为true时关闭验证功能。</description>
+		</attribute>
+		<!-- TextBox 属性 -->
+		<attribute>
+			<name>width</name>
+			<description>组件的宽度。</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>组件的高度。</description>
+		</attribute>
+		<attribute>
+			<name>prompt</name>
+			<description>在输入框显示提示消息。</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<description>默认值</description>
+		</attribute>
+		<attribute>
+			<name>multiline</name>
+			<description>定义是否是多行文本框。</description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<description>定义用户是否可以直接在该字段内输入文字。</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>定义是否禁用该字段。</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<description>定义是否将该控件设为只读。</description>
+		</attribute>
+		<attribute>
+			<name>icons</name>
+			<description>在文本框删贡献是图标。每一项都有以下属性：iconCls：类型string，图标的class名称；disabled：类型boolean，指明是否禁用该图标；handler：类型function，用于处理点击该图标以后的动作。</description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>在文本框显示背景图标。</description>
+		</attribute>
+		<attribute>
+			<name>iconAlign</name>
+			<description>背景图标的位置。可用值有："left", "right"。</description>
+		</attribute>
+		<attribute>
+			<name>iconWidth</name>
+			<description>图标宽度。</description>
+		</attribute>
+		<attribute>
+			<name>buttonText</name>
+			<description>文本框附加按钮显示的文本内容。</description>
+		</attribute>
+		<attribute>
+			<name>buttonIcon</name>
+			<description>文本框附加按钮显示的图标。</description>
+		</attribute>
+		<attribute>
+			<name>buttonAlign</name>
+			<description>附加按钮的位置。可用值有："left", "right"。</description>
+		</attribute>
+		<!-- TextBox 事件 -->
+		<attribute>
+			<name>onChange</name>
+			<description>在字段值更改的时候触发。参数：newValue, oldValue </description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<description>在文本框大小改变的时候触发。参数：width, height </description>
+		</attribute>
+		<attribute>
+			<name>onClickButton</name>
+			<description>在用户点击按钮的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onClickIcon</name>
+			<description>在用户点击图标的时候触发。参数：index </description>
+		</attribute>
+
+	</tag>
+
+	<!-- validatebox -->
+	<tag>
+		<name>validatebox</name>
+		<tag-class>org.kayura.tags.easyui.ValidateBoxTag</tag-class>
+		<body-content>jsp</body-content>
+		<!-- html -->
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>name 标签.</description>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<description>指定 input.type 的值.</description>
+		</attribute>
+		<!-- validatebox 属性 -->
+		<attribute>
+			<name>required</name>
+			<description>定义为必填字段。</description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>延迟到最后验证输入值。</description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<description>当文本框未填写时出现的提示信息。</description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<description>当文本框的内容被验证为无效时出现的提示。</description>
+		</attribute>
+		<attribute>
+			<name>tipPosition</name>
+			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<description>提示框在水平方向上位移。</description>
+		</attribute>
+		<attribute>
+			<name>novalidate</name>
+			<description>为true时关闭验证功能。</description>
+		</attribute>
+	</tag>
+
+	<!-- form -->
+	<tag>
+		<name>form</name>
+		<tag-class>org.kayura.tags.easyui.FormTag</tag-class>
+		<body-content>jsp</body-content>
+		<attribute>
+			<name>id</name>
+			<description>的标签ID.</description>
+		</attribute>
+
+		<attribute>
+			<name>novalidate</name>
+			<description>定义是否验证表单的字段，true:验证,false:不验证。</description>
+		</attribute>
+		<attribute>
+			<name>ajax</name>
+			<description>定义是否使用ajax提交表单，true:使用,false:不使用。</description>
+		</attribute>
+		<attribute>
+			<name>queryParams</name>
+			<description>当表单被提交到服务器的时候增加的额外参数列表。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<description>提交表单动作的URL地址。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>multipart</name>
+			<description>设置表单的MIME编码，一般需要上传附件使用。</description>
+		</attribute>
+
+		<attribute>
+			<name>onSubmit</name>
+			<description>在提交之前触发，返回false可以终止提交。参数：param </description>
+		</attribute>
+		<attribute>
+			<name>success</name>
+			<description>在表单提交成功以后触发。参数：data </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeLoad</name>
+			<description>在请求加载数据之前触发。返回false可以停止该动作。参数：param </description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<description>在表单数据加载完成后触发。参数： data </description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<description>在表单数据加载出现错误的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onChange</name>
+			<description>在表单数据发生变化的时候触发。</description>
+		</attribute>
+
+	</tag>
+
+	<!-- columns -->
 	<tag>
 		<name>columns</name>
 		<tag-class>org.kayura.tags.easyui.ColumnsTag</tag-class>
@@ -16,6 +1016,7 @@
 		</attribute>
 	</tag>
 
+	<!-- column -->
 	<tag>
 		<name>column</name>
 		<tag-class>org.kayura.tags.easyui.ColumnTag</tag-class>
@@ -97,6 +1098,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- datagrid -->
 	<tag>
 		<name>datagrid</name>
 		<tag-class>org.kayura.tags.easyui.DataGridTag</tag-class>
@@ -720,64 +1722,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
-	<tag>
-		<name>validatebox</name>
-		<tag-class>org.kayura.tags.easyui.ValidateBoxTag</tag-class>
-		<body-content>jsp</body-content>
-		<attribute>
-			<name>id</name>
-			<description>菜单标签ID</description>
-		</attribute>
-		<attribute>
-			<name>name</name>
-			<description>name 标签.</description>
-		</attribute>
-		<attribute>
-			<name>classStyle</name>
-			<description>附加样式.</description>
-		</attribute>
-		<attribute>
-			<name>type</name>
-			<description>指定 input.type 的值.</description>
-		</attribute>
-		<attribute>
-			<name>style</name>
-			<description>HTML标签样式定义.</description>
-		</attribute>
-		<attribute>
-			<name>required</name>
-			<description>定义为必填字段。</description>
-		</attribute>
-		<attribute>
-			<name>validType</name>
-			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
-		</attribute>
-		<attribute>
-			<name>delay</name>
-			<description>延迟到最后验证输入值。</description>
-		</attribute>
-		<attribute>
-			<name>missingMessage</name>
-			<description>当文本框未填写时出现的提示信息。</description>
-		</attribute>
-		<attribute>
-			<name>invalidMessage</name>
-			<description>当文本框的内容被验证为无效时出现的提示。</description>
-		</attribute>
-		<attribute>
-			<name>tipPosition</name>
-			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
-		</attribute>
-		<attribute>
-			<name>deltaX</name>
-			<description>提示框在水平方向上位移。</description>
-		</attribute>
-		<attribute>
-			<name>novalidate</name>
-			<description>为true时关闭验证功能。</description>
-		</attribute>
-	</tag>
-
+	<!-- accordion -->
 	<tag>
 		<name>accordion</name>
 		<tag-class>org.kayura.tags.easyui.AccordionTag</tag-class>
@@ -841,6 +1786,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- sheet -->
 	<tag>
 		<name>sheet</name>
 		<tag-class>org.kayura.tags.easyui.SheetTag</tag-class>
@@ -1052,6 +1998,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- menu -->
 	<tag>
 		<name>menu</name>
 		<tag-class>org.kayura.tags.easyui.MenuTag</tag-class>
@@ -1128,6 +2075,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- submenu -->
 	<tag>
 		<name>submenu</name>
 		<tag-class>org.kayura.tags.easyui.SubMenuTag</tag-class>
@@ -1158,6 +2106,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- menuitem -->
 	<tag>
 		<name>menuitem</name>
 		<tag-class>org.kayura.tags.easyui.MenuItemTag</tag-class>
@@ -1200,6 +2149,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- splitbutton -->
 	<tag>
 		<name>splitbutton</name>
 		<tag-class>org.kayura.tags.easyui.SplitButtonTag</tag-class>
@@ -1268,6 +2218,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- menubutton -->
 	<tag>
 		<name>menubutton</name>
 		<tag-class>org.kayura.tags.easyui.MenuButtonTag</tag-class>
@@ -1340,6 +2291,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- linkbutton -->
 	<tag>
 		<name>linkbutton</name>
 		<tag-class>org.kayura.tags.easyui.LinkButtonTag</tag-class>
@@ -1401,6 +2353,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- searchbox -->
 	<tag>
 		<name>searchbox</name>
 		<tag-class>org.kayura.tags.easyui.SearchBoxTag</tag-class>
@@ -1444,6 +2397,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- renderSection -->
 	<tag>
 		<name>renderSection</name>
 		<tag-class>org.kayura.tags.common.RenderSectionTag</tag-class>
@@ -1455,6 +2409,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- section -->
 	<tag>
 		<name>section</name>
 		<tag-class>org.kayura.tags.common.SectionTag</tag-class>
@@ -1466,6 +2421,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- tabs -->
 	<tag>
 		<name>tabs</name>
 		<tag-class>org.kayura.tags.easyui.TabsTag</tag-class>
@@ -1585,6 +2541,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- tabpage -->
 	<tag>
 		<name>tabpage</name>
 		<tag-class>org.kayura.tags.easyui.TabPageTag</tag-class>
@@ -1646,6 +2603,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- body -->
 	<tag>
 		<name>body</name>
 		<tag-class>org.kayura.tags.easyui.BodyTag</tag-class>
@@ -1668,6 +2626,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- layout -->
 	<tag>
 		<name>layout</name>
 		<tag-class>org.kayura.tags.easyui.LayoutTag</tag-class>
@@ -1688,6 +2647,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- dock -->
 	<tag>
 		<name>dock</name>
 		<tag-class>org.kayura.tags.easyui.DockTag</tag-class>
@@ -1750,6 +2710,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- resources -->
 	<tag>
 		<name>resources</name>
 		<tag-class>org.kayura.tags.common.ResourcesTag</tag-class>
@@ -1762,6 +2723,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- resource -->
 	<tag>
 		<name>resource</name>
 		<tag-class>org.kayura.tags.common.ResourceTag</tag-class>
@@ -1780,10 +2742,12 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
+	<!-- tree -->
 	<tag>
 		<name>tree</name>
 		<tag-class>org.kayura.tags.easyui.TreeTag</tag-class>
 		<body-content>empty</body-content>
+		<!-- html -->
 		<attribute>
 			<name>id</name>
 			<required>true</required>
@@ -1795,6 +2759,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		<attribute>
 			<name>style</name>
 		</attribute>
+		<!-- tree 属性 -->
 		<attribute>
 			<name>url</name>
 			<description>检索远程数据的URL地址。</description>
@@ -1838,7 +2803,6 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 			<name>data</name>
 			<description>节点数据加载。</description>
 			<rtexprvalue>true</rtexprvalue>
-			<type>org.kayura.tags.easyui.types.TreeNode</type>
 		</attribute>
 		<attribute>
 			<name>queryParams</name>
@@ -1861,30 +2825,153 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 			<name>loadFilter</name>
 			<description>返回过滤过的数据进行展示。返回数据是标准树格式。函数定义：function(data,parent)</description>
 		</attribute>
+		<!-- tree 事件 -->
+		<attribute>
+			<name>onClick</name>
+			<description>在用户点击一个节点的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onDblClick</name>
+			<description>在用户双击一个节点的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeLoad</name>
+			<description>在请求加载远程数据之前触发，返回false可以取消加载操作。参数：node, param </description>
+		</attribute>
+		<attribute>
+			<name>onLoadSuccess</name>
+			<description>在数据加载成功以后触发。参数：node, data </description>
+		</attribute>
+		<attribute>
+			<name>onLoadError</name>
+			<description>在数据加载失败的时候触发，arguments参数和jQuery的$.ajax()函数里面的'error'回调函数的参数相同。</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeExpand</name>
+			<description>在节点展开之前触发，返回false可以取消展开操作。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onExpand</name>
+			<description>在节点展开的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCollapse</name>
+			<description>在节点折叠之前触发，返回false可以取消折叠操作。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onCollapse</name>
+			<description>在节点折叠的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeCheck</name>
+			<description>在用户点击勾选复选框之前触发，返回false可以取消选择动作。参数：node, checked 。（该事件自1.3.1版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onCheck</name>
+			<description>在用户点击勾选复选框的时候触发。参数：node, checked 。</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeSelect</name>
+			<description>在用户选择一个节点之前触发，返回false可以取消选择动作。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<description>在用户选择节点的时候触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onContextMenu</name>
+			<description>在右键点击节点的时候触发。参数：e, node </description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDrag</name>
+			<description>在开始拖动节点之前触发，返回false可以拒绝拖动。参数：node 。（该事件自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onStartDrag</name>
+			<description>在开始拖动节点的时候触发。参数：node 。（该事件自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onStopDrag</name>
+			<description>在停止拖动节点的时候触发。参数：node 。（该事件自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>onDragEnter</name>
+			<description>
+			<![CDATA[在拖动一个节点进入到某个目标节点并释放的时候触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			（该事件自1.3.2版开始可用）]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onDragOver</name>
+			<description>
+			<![CDATA[在拖动一个节点经过某个目标节点并释放的时候触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			（该事件自1.3.2版开始可用）]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onDragLeave</name>
+			<description>
+			<![CDATA[在拖动一个节点离开某个目标节点并释放的时候触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			（该事件自1.3.2版开始可用）]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeDrop</name>
+			<description>
+			<![CDATA[在拖动一个节点之前触发，返回false可以拒绝拖动。<br>
+			target：释放的目标节点元素。<br>
+			source：开始拖动的源节点。<br>
+			point：表示哪一种拖动操作，可用值有：'append','top' 或 'bottom'。<br>
+			（该事件自1.3.3版开始可用）]]>
+		</description>
+		</attribute>
+		<attribute>
+			<name>onDrop</name>
+			<description>
+			<![CDATA[当节点位置被拖动时触发。<br>
+			target：DOM对象，需要被拖动动的目标节点。<br>
+			source：源节点。<br>
+			point：表示哪一种拖动操作，可用值有：'append','top' 或 'bottom'。]]>
+		</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeEdit</name>
+			<description>在编辑节点之前触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onAfterEdit</name>
+			<description>在编辑节点之后触发。参数：node </description>
+		</attribute>
+		<attribute>
+			<name>onCancelEdit</name>
+			<description>在取消编辑操作的时候触发。参数：node </description>
+		</attribute>
 	</tag>
 
+	<!-- panel -->
 	<tag>
 		<name>panel</name>
 		<tag-class>org.kayura.tags.easyui.PanelTag</tag-class>
+		<description>
+		<![CDATA[使用$.fn.panel.defaults重写默认值对象。<br><br>
+		面板作为承载其它内容的容器。这是构建其他组件的基础（比如：layout,tabs,accordion等）。<br>
+		它还提供了折叠、关闭、最大化、最小化和自定义行为。面板可以很容易地嵌入到web页面的任何位置。]]>
+		</description>
 		<body-content>jsp</body-content>
+		<!-- html -->
 		<attribute>
 			<name>id</name>
-			<description>面板的标签ID.</description>
+			<description>菜单标签ID</description>
 		</attribute>
 		<attribute>
-			<name>title</name>
-			<description>在面板头部显示的标题文本。</description>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-		<attribute>
-			<name>iconCls</name>
-			<description>设置一个16x16图标的CSS类ID显示在面板左上角。</description>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-		<attribute>
-			<name>padding</name>
-			<description>设置内间距。</description>
-			<rtexprvalue>true</rtexprvalue>
+			<name>name</name>
+			<description>name 标签.</description>
 		</attribute>
 		<attribute>
 			<name>width</name>
@@ -1894,6 +2981,30 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		<attribute>
 			<name>height</name>
 			<description>设置面板高度。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>padding</name>
+			<description>设置内间距。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<!-- panel 属性 -->
+		<attribute>
+			<name>title</name>
+			<description>在面板头部显示的标题文本。</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>设置一个16x16图标的CSS类ID显示在面板左上角。</description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
@@ -1968,7 +3079,10 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 		<attribute>
 			<name>tools</name>
-			<description>自定义工具菜单，可用值：1) 数组，每个元素都包含'iconCls'和'handler'属性。2) 指向工具菜单的选择器。</description>
+			<description>
+			<![CDATA[自定义工具菜单，可用值：<br>
+			1) 数组，每个元素都包含'iconCls'和'handler'属性。<br>
+			2) 指向工具菜单的选择器。]]></description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
@@ -1978,7 +3092,10 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 		<attribute>
 			<name>footer</name>
-			<description>定义面板页脚。可用值：1) 数组，每个元素都包含'iconCls'和'handler'属性。2) 指向工具菜单的选择器。</description>
+			<description>
+			<![CDATA[定义面板页脚。可用值：<br>
+			1) 数组，每个元素都包含'iconCls'和'handler'属性。<br>
+			2) 指向工具菜单的选择器。]]></description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
@@ -2023,7 +3140,10 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 		<attribute>
 			<name>href</name>
-			<description>从URL读取远程数据并且显示到面板。注意：内容将不会被载入，直到面板打开或扩大，在创建延迟加载面板时是非常有用的： </description>
+			<description>
+			<![CDATA[从URL读取远程数据并且显示到面板。<br>
+			注意：内容将不会被载入，直到面板打开或扩大，在创建延迟加载面板时是非常有用的： ]]>
+			</description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
@@ -2054,14 +3174,14 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		<attribute>
 			<name>loader</name>
 			<description>
-			定义了如何从远程服务器加载内容页，该函数接受以下参数：
-			param：参数对象发送给远程服务器。
-			success(data)：在检索数据成功的时候调用的回调函数。
-			error()：在检索数据失败的时候调用的回调函数。
+			<![CDATA[定义了如何从远程服务器加载内容页，该函数接受以下参数：<br>
+			param：参数对象发送给远程服务器。<br>
+			success(data)：在检索数据成功的时候调用的回调函数。<br>
+			error()：在检索数据失败的时候调用的回调函数。]]>
 			</description>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
-
+		<!-- panel 事件 -->
 		<attribute>
 			<name>onBeforeLoad</name>
 			<description>在加载内容页之前触发，返回false将忽略该动作。</description>

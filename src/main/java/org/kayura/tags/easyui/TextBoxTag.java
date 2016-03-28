@@ -6,6 +6,8 @@ package org.kayura.tags.easyui;
 
 import java.util.Map;
 
+import org.kayura.tags.types.RawString;
+
 /**
  * TextBoxTag
  *
@@ -23,13 +25,14 @@ public class TextBoxTag extends ValidateBoxTag {
 	private Boolean editable;
 	private Boolean disabled;
 	private Boolean readonly;
-	private String icons;
 	private String iconCls;
 	private String iconAlign;
 	private Integer iconWidth;
 	private String buttonText;
 	private String buttonIcon;
 	private String buttonAlign;
+
+	private String icons;
 
 	private String onChange;
 	private String onResize;
@@ -40,7 +43,7 @@ public class TextBoxTag extends ValidateBoxTag {
 	public String getEasyUITag() {
 		return "textbox";
 	}
-	
+
 	@Override
 	public Map<String, Object> makeOptions() {
 
@@ -54,13 +57,22 @@ public class TextBoxTag extends ValidateBoxTag {
 		putMap(map, "editable", editable);
 		putMap(map, "disabled", disabled);
 		putMap(map, "readonly", readonly);
-		putMap(map, "icons", icons);
 		putMap(map, "iconCls", iconCls);
 		putMap(map, "iconAlign", iconAlign);
 		putMap(map, "iconWidth", iconWidth);
 		putMap(map, "buttonText", buttonText);
 		putMap(map, "buttonIcon", buttonIcon);
 		putMap(map, "buttonAlign", buttonAlign);
+
+		if (icons != null) {
+			if (icons instanceof String) {
+				String t = (String) icons;
+				putMap(map, "icons", RawString.make(t));
+			} else {
+				putMap(map, "icons", icons);
+			}
+		}
+
 		putMap(map, "onChange", onChange);
 		putMap(map, "onResize", onResize);
 		putMap(map, "onClickButton", onClickButton);

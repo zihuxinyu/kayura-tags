@@ -24,7 +24,7 @@ public class ValidateBoxTag extends TagRender {
 	private String type;
 	private Boolean required;
 	private String validType;
-	private Boolean delay;
+	private Integer delay;
 	private String missingMessage;
 	private String invalidMessage;
 	private String tipPosition;
@@ -117,11 +117,11 @@ public class ValidateBoxTag extends TagRender {
 		this.validType = validType;
 	}
 
-	public Boolean getDelay() {
+	public Integer getDelay() {
 		return delay;
 	}
 
-	public void setDelay(Boolean delay) {
+	public void setDelay(Integer delay) {
 		this.delay = delay;
 	}
 

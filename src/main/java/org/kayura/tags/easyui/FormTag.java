@@ -27,6 +27,13 @@ public class FormTag extends TagRender {
 	private String url;
 	private Boolean multipart;
 
+	private String onSubmit;
+	private String success;
+	private String onBeforeLoad;
+	private String onLoadSuccess;
+	private String onLoadError;
+	private String onChange;
+
 	@Override
 	public String getEasyUITag() {
 		return null;
@@ -47,9 +54,17 @@ public class FormTag extends TagRender {
 		putMap(map, "url", url);
 
 		if (queryParams instanceof String) {
-			queryParams = RawString.make((String) queryParams);
+			putMap(map, "queryParams", RawString.make((String) queryParams));
+		} else {
+			putMap(map, "queryParams", queryParams);
 		}
-		putMap(map, "queryParams", queryParams);
+
+		putMap(map, "onSubmit", RawString.make(onSubmit));
+		putMap(map, "success", RawString.make(success));
+		putMap(map, "onBeforeLoad", RawString.make(onBeforeLoad));
+		putMap(map, "onLoadSuccess", RawString.make(onLoadSuccess));
+		putMap(map, "onLoadError", RawString.make(onLoadError));
+		putMap(map, "onChange", RawString.make(onChange));
 
 		return map;
 	}
@@ -112,6 +127,54 @@ public class FormTag extends TagRender {
 
 	public void setMultipart(Boolean multipart) {
 		this.multipart = multipart;
+	}
+
+	public String getOnSubmit() {
+		return onSubmit;
+	}
+
+	public void setOnSubmit(String onSubmit) {
+		this.onSubmit = onSubmit;
+	}
+
+	public String getSuccess() {
+		return success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getOnBeforeLoad() {
+		return onBeforeLoad;
+	}
+
+	public void setOnBeforeLoad(String onBeforeLoad) {
+		this.onBeforeLoad = onBeforeLoad;
+	}
+
+	public String getOnLoadSuccess() {
+		return onLoadSuccess;
+	}
+
+	public void setOnLoadSuccess(String onLoadSuccess) {
+		this.onLoadSuccess = onLoadSuccess;
+	}
+
+	public String getOnLoadError() {
+		return onLoadError;
+	}
+
+	public void setOnLoadError(String onLoadError) {
+		this.onLoadError = onLoadError;
+	}
+
+	public String getOnChange() {
+		return onChange;
+	}
+
+	public void setOnChange(String onChange) {
+		this.onChange = onChange;
 	}
 
 }

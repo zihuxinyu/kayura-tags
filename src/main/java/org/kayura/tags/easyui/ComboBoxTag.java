@@ -52,16 +52,6 @@ public class ComboBoxTag extends ComboTag {
 	}
 
 	@Override
-	public String getHtmlTag() {
-
-		if (emptyBody()) {
-			return "input";
-		} else {
-			return "select";
-		}
-	}
-
-	@Override
 	public Boolean emptyBody() {
 
 		return !isEmpty(url) || data != null;

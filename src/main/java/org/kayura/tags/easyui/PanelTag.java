@@ -195,7 +195,7 @@ public class PanelTag extends TagRender {
 		if (queryParams instanceof String) {
 			putMap(map, "queryParams", RawString.make((String) queryParams));
 		} else {
-			putMap(map, "queryParams", tools);
+			putMap(map, "queryParams", queryParams);
 		}
 		
 		putMap(map, "loader", RawString.make(loader));
