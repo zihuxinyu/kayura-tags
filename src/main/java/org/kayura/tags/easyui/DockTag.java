@@ -31,10 +31,10 @@ public class DockTag extends TagRender {
 	private String iconCls;
 	private String href;
 	private Boolean collapsible;
-	private Integer minWidth;
-	private Integer minHeight;
-	private Integer maxWidth;
-	private Integer maxHeight;
+	private String minWidth;
+	private String minHeight;
+	private String maxWidth;
+	private String maxHeight;
 
 	@Override
 	public String getEasyUITag() {
@@ -127,35 +127,35 @@ public class DockTag extends TagRender {
 		this.collapsible = collapsible;
 	}
 
-	public Integer getMinWidth() {
+	public String getMinWidth() {
 		return minWidth;
 	}
 
-	public void setMinWidth(Integer minWidth) {
+	public void setMinWidth(String minWidth) {
 		this.minWidth = minWidth;
 	}
 
-	public Integer getMinHeight() {
+	public String getMinHeight() {
 		return minHeight;
 	}
 
-	public void setMinHeight(Integer minHeight) {
+	public void setMinHeight(String minHeight) {
 		this.minHeight = minHeight;
 	}
 
-	public Integer getMaxWidth() {
+	public String getMaxWidth() {
 		return maxWidth;
 	}
 
-	public void setMaxWidth(Integer maxWidth) {
+	public void setMaxWidth(String maxWidth) {
 		this.maxWidth = maxWidth;
 	}
 
-	public Integer getMaxHeight() {
+	public String getMaxHeight() {
 		return maxHeight;
 	}
 
-	public void setMaxHeight(Integer maxHeight) {
+	public void setMaxHeight(String maxHeight) {
 		this.maxHeight = maxHeight;
 	}
 

@@ -17,14 +17,15 @@ public class ComboTag extends ValidateBoxTag {
 
 	private static final long serialVersionUID = 1354709622494115600L;
 
-	private Integer width;
-	private Integer height;
-	private Integer panelWidth;
-	private Integer panelHeight;
-	private Integer panelMinWidth;
-	private Integer panelMaxWidth;
-	private Integer panelMinHeight;
-	private Integer panelMaxHeight;
+	private String width;
+	private String height;
+	private String panelWidth;
+	private String panelHeight;
+	private String panelMinWidth;
+	private String panelMaxWidth;
+	private String panelMinHeight;
+	private String panelMaxHeight;
+
 	private String panelAlign;
 	private Boolean multiple;
 	private Boolean selectOnNavigation;
@@ -64,6 +65,7 @@ public class ComboTag extends ValidateBoxTag {
 		putMap(map, "panelMaxWidth", panelMaxWidth);
 		putMap(map, "panelMinHeight", panelMinHeight);
 		putMap(map, "panelMaxHeight", panelMaxHeight);
+
 		putMap(map, "panelAlign", panelAlign);
 		putMap(map, "multiple", multiple);
 		putMap(map, "selectOnNavigation", selectOnNavigation);
@@ -82,67 +84,67 @@ public class ComboTag extends ValidateBoxTag {
 		return map;
 	}
 
-	public Integer getWidth() {
+	public String getWidth() {
 		return width;
 	}
 
-	public void setWidth(Integer width) {
+	public void setWidth(String width) {
 		this.width = width;
 	}
 
-	public Integer getHeight() {
+	public String getHeight() {
 		return height;
 	}
 
-	public void setHeight(Integer height) {
+	public void setHeight(String height) {
 		this.height = height;
 	}
 
-	public Integer getPanelWidth() {
+	public String getPanelWidth() {
 		return panelWidth;
 	}
 
-	public void setPanelWidth(Integer panelWidth) {
+	public void setPanelWidth(String panelWidth) {
 		this.panelWidth = panelWidth;
 	}
 
-	public Integer getPanelHeight() {
+	public String getPanelHeight() {
 		return panelHeight;
 	}
 
-	public void setPanelHeight(Integer panelHeight) {
+	public void setPanelHeight(String panelHeight) {
 		this.panelHeight = panelHeight;
 	}
 
-	public Integer getPanelMinWidth() {
+	public String getPanelMinWidth() {
 		return panelMinWidth;
 	}
 
-	public void setPanelMinWidth(Integer panelMinWidth) {
+	public void setPanelMinWidth(String panelMinWidth) {
 		this.panelMinWidth = panelMinWidth;
 	}
 
-	public Integer getPanelMaxWidth() {
+	public String getPanelMaxWidth() {
 		return panelMaxWidth;
 	}
 
-	public void setPanelMaxWidth(Integer panelMaxWidth) {
+	public void setPanelMaxWidth(String panelMaxWidth) {
 		this.panelMaxWidth = panelMaxWidth;
 	}
 
-	public Integer getPanelMinHeight() {
+	public String getPanelMinHeight() {
 		return panelMinHeight;
 	}
 
-	public void setPanelMinHeight(Integer panelMinHeight) {
+	public void setPanelMinHeight(String panelMinHeight) {
 		this.panelMinHeight = panelMinHeight;
 	}
 
-	public Integer getPanelMaxHeight() {
+	public String getPanelMaxHeight() {
 		return panelMaxHeight;
 	}
 
-	public void setPanelMaxHeight(Integer panelMaxHeight) {
+	public void setPanelMaxHeight(String panelMaxHeight) {
 		this.panelMaxHeight = panelMaxHeight;
 	}
 

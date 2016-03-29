@@ -17,8 +17,6 @@ public class DateBoxTag extends ComboTag {
 
 	private static final long serialVersionUID = 6731391328830047501L;
 
-	private Integer panelWidth;
-	private Integer panelHeight;
 	private String currentText;
 	private String closeText;
 	private String okText;
@@ -42,8 +40,6 @@ public class DateBoxTag extends ComboTag {
 
 		Map<String, Object> map = super.makeOptions();
 
-		putMap(map, "panelWidth", panelWidth);
-		putMap(map, "panelHeight", panelHeight);
 		putMap(map, "closeText", closeText);
 		putMap(map, "okText", okText);
 		putMap(map, "disabled", disabled);
@@ -57,22 +53,6 @@ public class DateBoxTag extends ComboTag {
 		putMap(map, "onSelect", RawString.make(onSelect));
 
 		return map;
-	}
-
-	public Integer getPanelWidth() {
-		return panelWidth;
-	}
-
-	public void setPanelWidth(Integer panelWidth) {
-		this.panelWidth = panelWidth;
-	}
-
-	public Integer getPanelHeight() {
-		return panelHeight;
-	}
-
-	public void setPanelHeight(Integer panelHeight) {
-		this.panelHeight = panelHeight;
 	}
 
 	public String getCurrentText() {
