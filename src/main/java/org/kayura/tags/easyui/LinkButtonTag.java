@@ -47,7 +47,7 @@ public class LinkButtonTag extends TagRender {
 		if (!isEmpty(getHref())) {
 			out.write(" href=\"" + getHref() + "\"");
 		} else {
-			out.write(" href=\"#\"");
+			out.write(" href=\"javascript:void(0)\"");
 		}
 
 		if (!isEmpty(getOnClick())) {
@@ -60,8 +60,6 @@ public class LinkButtonTag extends TagRender {
 
 		if (!isEmpty(getText())) {
 			out.write(getText());
-		} else {
-			out.write("未命名");
 		}
 	}
 

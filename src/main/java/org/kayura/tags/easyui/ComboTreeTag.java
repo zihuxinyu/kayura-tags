@@ -9,6 +9,7 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.types.RawString;
+import org.kayura.tags.types.TagUtils;
 
 /**
  * ComboTreeTag
@@ -56,7 +57,8 @@ public class ComboTreeTag extends ComboTag {
 		putMap(map, "editable", editable);
 
 		if (!isEmpty(method)) {
-			if (METHOD_POST.equals(method.toUpperCase()) || METHOD_GET.equals(method.toUpperCase())) {
+			if (TagUtils.METHOD_POST.equals(method.toUpperCase()) || 
+				TagUtils.METHOD_GET.equals(method.toUpperCase())) {
 				putMap(map, "method", method);
 			} else {
 				if (logger.isErrorEnabled()) {

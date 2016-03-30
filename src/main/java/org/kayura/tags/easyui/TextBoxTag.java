@@ -17,8 +17,8 @@ public class TextBoxTag extends ValidateBoxTag {
 
 	private static final long serialVersionUID = 8413951518591159899L;
 
-	private Integer width;
-	private Integer height;
+	private String width;
+	private String height;
 	private String prompt;
 	private String value;
 	private Boolean multiline;
@@ -81,11 +81,11 @@ public class TextBoxTag extends ValidateBoxTag {
 		return map;
 	}
 
-	public Integer getWidth() {
+	public String getWidth() {
 		return width;
 	}
 
-	public Integer getHeight() {
+	public String getHeight() {
 		return height;
 	}
 
@@ -157,11 +157,11 @@ public class TextBoxTag extends ValidateBoxTag {
 		return onClickIcon;
 	}
 
-	public void setWidth(Integer width) {
+	public void setWidth(String width) {
 		this.width = width;
 	}
 
-	public void setHeight(Integer height) {
+	public void setHeight(String height) {
 		this.height = height;
 	}
 

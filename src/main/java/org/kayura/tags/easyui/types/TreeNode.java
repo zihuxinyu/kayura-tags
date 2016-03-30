@@ -27,6 +27,11 @@ public class TreeNode {
 	private List<TreeNode> children;
 	private Map<String, Object> attributes;
 
+	public TreeNode() {
+		this.children = new ArrayList<TreeNode>();
+		this.attributes = new HashMap<String, Object>();
+	}
+
 	public String getId() {
 		return id;
 	}

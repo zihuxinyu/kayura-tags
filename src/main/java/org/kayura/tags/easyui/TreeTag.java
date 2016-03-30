@@ -12,6 +12,7 @@ import javax.servlet.jsp.JspWriter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.types.RawString;
+import org.kayura.tags.types.TagUtils;
 
 /**
  * EasyUI Tree 组件, 支持 1.4.3 版。
@@ -80,7 +81,8 @@ public class TreeTag extends TagRender {
 		Map<String, Object> map = new HashMap<String, Object>();
 
 		if (!isEmpty(method)) {
-			if (METHOD_POST.equals(method.toUpperCase()) || METHOD_GET.equals(method.toUpperCase())) {
+			if (TagUtils.METHOD_POST.equals(method.toUpperCase()) || 
+				TagUtils.METHOD_GET.equals(method.toUpperCase())) {
 				putMap(map, "method", method);
 			} else {
 				if (logger.isErrorEnabled()) {

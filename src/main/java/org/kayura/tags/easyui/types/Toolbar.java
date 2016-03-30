@@ -11,10 +11,17 @@ package org.kayura.tags.easyui.types;
  */
 public class Toolbar {
 
+	private String text;
 	private String iconCls;
 	private String handler;
 
 	public Toolbar(String iconCls, String handler) {
+		this.iconCls = iconCls;
+		this.handler = handler;
+	}
+
+	public Toolbar(String text, String iconCls, String handler) {
+		this.text = text;
 		this.iconCls = iconCls;
 		this.handler = handler;
 	}
@@ -33,6 +40,14 @@ public class Toolbar {
 
 	public void setHandler(String handler) {
 		this.handler = handler;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
 	}
 
 }

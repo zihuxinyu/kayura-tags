@@ -17,10 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.easyui.types.Toolbar;
 import org.kayura.tags.types.RawString;
-
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.kayura.tags.types.TagUtils;
 
 /**
  * EasyUI 标签库基础渲染器。
@@ -31,15 +28,6 @@ public abstract class TagRender extends BodyTagSupport {
 
 	private static final long serialVersionUID = -2565725992851402935L;
 	private static final Log logger = LogFactory.getLog(TagRender.class);
-	private static final ObjectMapper objectMapper = new ObjectMapper();
-
-	static {
-		// 不生成值为 null 的属性.
-		objectMapper.setSerializationInclusion(Include.NON_NULL);
-	}
-
-	public static final String METHOD_POST = "POST";
-	public static final String METHOD_GET = "GET";
 
 	public static final String ANIMATION_SLIDE = "slide";
 	public static final String ANIMATION_FADE = "fade";
@@ -96,16 +84,8 @@ public abstract class TagRender extends BodyTagSupport {
 	}
 
 	public String json(Object value) {
-		String s = null;
-		try {
-			s = objectMapper.writeValueAsString(value);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-			if (logger.isErrorEnabled()) {
-				logger.error(e.getMessage(), e);
-			}
-		}
-		return s;
+
+		return TagUtils.json(value);
 	}
 
 	public String json(List<Toolbar> toolbars) {
@@ -125,7 +105,15 @@ public abstract class TagRender extends BodyTagSupport {
 			}
 
 			sb.append("{");
-			sb.append("iconCls:\"" + t.getIconCls() + "\"");
+
+			if (!isEmpty(t.getText())) {
+				sb.append("text:\"" + t.getText() + "\",");
+			}
+
+			if (!isEmpty(t.getIconCls())) {
+				sb.append("iconCls:\"" + t.getIconCls() + "\",");
+			}
+
 			sb.append("handler:function(){ " + t.getHandler() + " }");
 			sb.append("}");
 

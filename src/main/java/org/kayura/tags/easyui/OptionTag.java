@@ -17,12 +17,17 @@ public class OptionTag extends TagRender {
 
 	private static final long serialVersionUID = 643533063474132407L;
 
-	private String lable;
+	private String label;
 	private String value;
 	private Boolean selected;
 
 	@Override
 	public String getEasyUITag() {
+		return null;
+	}
+
+	@Override
+	public String getHtmlTag() {
 		return "option";
 	}
 
@@ -31,6 +36,10 @@ public class OptionTag extends TagRender {
 
 		if (!isEmpty(getValue())) {
 			out.write(" value=\"" + getValue() + "\"");
+		} else {
+			if (!isEmpty(getLabel())) {
+				out.write(" value=\"" + getLabel() + "\"");
+			}
 		}
 
 		if (getSelected() != null && getSelected() == true) {
@@ -41,8 +50,12 @@ public class OptionTag extends TagRender {
 	@Override
 	public void doRenderBody(JspWriter out) throws Exception {
 
-		if (!isEmpty(getLable())) {
-			out.write(getLable());
+		if (!isEmpty(getLabel())) {
+			out.write(getLabel());
+		} else {
+			if (!isEmpty(getValue())) {
+				out.write(getValue());
+			}
 		}
 	}
 
@@ -51,12 +64,12 @@ public class OptionTag extends TagRender {
 		return null;
 	}
 
-	public String getLable() {
-		return lable;
+	public String getLabel() {
+		return label;
 	}
 
-	public void setLable(String lable) {
-		this.lable = lable;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	public String getValue() {
