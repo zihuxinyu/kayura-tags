@@ -10,9 +10,6 @@ import java.util.Map;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.BodyContent;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 /**
  * MenuItemTag
  *
@@ -21,7 +18,6 @@ import org.apache.commons.logging.LogFactory;
 public class MenuItemTag extends TagRender {
 
 	private static final long serialVersionUID = -4460097816879880475L;
-	private static final Log logger = LogFactory.getLog(MenuItemTag.class);
 
 	private String name;
 	private String text;

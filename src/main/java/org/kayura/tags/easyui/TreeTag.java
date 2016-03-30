@@ -9,8 +9,6 @@ import java.util.Map;
 
 import javax.servlet.jsp.JspWriter;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.types.RawString;
 import org.kayura.tags.types.TagUtils;
 
@@ -22,7 +20,6 @@ import org.kayura.tags.types.TagUtils;
 public class TreeTag extends TagRender {
 
 	private static final long serialVersionUID = 7276686505986997478L;
-	private static final Log logger = LogFactory.getLog(TreeTag.class);
 
 	private String url;
 	private String method;
@@ -81,8 +78,7 @@ public class TreeTag extends TagRender {
 		Map<String, Object> map = new HashMap<String, Object>();
 
 		if (!isEmpty(method)) {
-			if (TagUtils.METHOD_POST.equals(method.toUpperCase()) || 
-				TagUtils.METHOD_GET.equals(method.toUpperCase())) {
+			if (TagUtils.METHOD_POST.equals(method.toUpperCase()) || TagUtils.METHOD_GET.equals(method.toUpperCase())) {
 				putMap(map, "method", method);
 			} else {
 				if (logger.isErrorEnabled()) {

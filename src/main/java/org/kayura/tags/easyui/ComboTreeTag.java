@@ -6,8 +6,6 @@ package org.kayura.tags.easyui;
 
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.types.RawString;
 import org.kayura.tags.types.TagUtils;
 
@@ -19,7 +17,6 @@ import org.kayura.tags.types.TagUtils;
 public class ComboTreeTag extends ComboTag {
 
 	private static final long serialVersionUID = 8115052203978775212L;
-	private static final Log logger = LogFactory.getLog(ComboTreeTag.class);
 
 	private Boolean editable;
 

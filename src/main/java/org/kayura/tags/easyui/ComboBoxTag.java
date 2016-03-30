@@ -6,8 +6,6 @@ package org.kayura.tags.easyui;
 
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.types.RawString;
 import org.kayura.tags.types.TagUtils;
 
@@ -19,7 +17,6 @@ import org.kayura.tags.types.TagUtils;
 public class ComboBoxTag extends ComboTag {
 
 	private static final long serialVersionUID = -3501316707895724419L;
-	private static final Log logger = LogFactory.getLog(ComboBoxTag.class);
 
 	public static final String MODE_REMOTE = "REMOTE";
 	public static final String MODE_LOCAL = "LOCAL";
@@ -76,8 +73,7 @@ public class ComboBoxTag extends ComboTag {
 		}
 
 		if (!isEmpty(method)) {
-			if (TagUtils.METHOD_POST.equals(method.toUpperCase()) || 
-				TagUtils.METHOD_GET.equals(method.toUpperCase())) {
+			if (TagUtils.METHOD_POST.equals(method.toUpperCase()) || TagUtils.METHOD_GET.equals(method.toUpperCase())) {
 				putMap(map, "method", method);
 			} else {
 				if (logger.isErrorEnabled()) {

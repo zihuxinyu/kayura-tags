@@ -11,9 +11,6 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.Tag;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 /**
  * SubMenuTag
  *
@@ -22,7 +19,6 @@ import org.apache.commons.logging.LogFactory;
 public class SubMenuTag extends TagRender {
 
 	private static final long serialVersionUID = 253047066833139L;
-	private static final Log logger = LogFactory.getLog(SubMenuTag.class);
 
 	private String text;
 	private String iconCls;

@@ -12,9 +12,6 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.Tag;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 /**
  * BodyTag
  *
@@ -23,7 +20,6 @@ import org.apache.commons.logging.LogFactory;
 public class BodyTag extends TagRender {
 
 	private static final long serialVersionUID = -7338802774183130605L;
-	private static final Log logger = LogFactory.getLog(BodyTag.class);
 
 	private Boolean full = false;
 	private Boolean layout = false;

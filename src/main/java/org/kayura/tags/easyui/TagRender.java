@@ -27,11 +27,12 @@ import org.kayura.tags.types.TagUtils;
 public abstract class TagRender extends BodyTagSupport {
 
 	private static final long serialVersionUID = -2565725992851402935L;
-	private static final Log logger = LogFactory.getLog(TagRender.class);
 
 	public static final String ANIMATION_SLIDE = "slide";
 	public static final String ANIMATION_FADE = "fade";
 	public static final String ANIMATION_SHOW = "show";
+
+	protected final Log logger = LogFactory.getLog(this.getClass());
 
 	private String classStyle;
 	private String style;
