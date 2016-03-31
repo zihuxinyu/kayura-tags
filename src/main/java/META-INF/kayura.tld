@@ -6,6 +6,297 @@
 	<short-name>jeasyui-tags</short-name>
 	<uri>http://www.kayura.org/tags/jeasyui</uri>
 
+	<!-- FileBox -->
+	<tag>
+		<name>filebox</name>
+		<description></description>
+		<tag-class>org.kayura.tags.easyui.FileBoxTag</tag-class>
+		<body-content>empty</body-content>
+		<!-- HTML 属性 -->
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>name 标签.</description>
+		</attribute>
+		<attribute>
+			<name>classStyle</name>
+			<description>附加样式.</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<!-- ValidateBox 属性 -->
+		<attribute>
+			<name>type</name>
+			<description>文本框类型。可用值有："text"和"password"。</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<description>定义为必填字段。</description>
+		</attribute>
+		<attribute>
+			<name>validType</name>
+			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+		</attribute>
+		<attribute>
+			<name>delay</name>
+			<description>延迟到最后验证输入值。</description>
+		</attribute>
+		<attribute>
+			<name>missingMessage</name>
+			<description>当文本框未填写时出现的提示信息。</description>
+		</attribute>
+		<attribute>
+			<name>invalidMessage</name>
+			<description>当文本框的内容被验证为无效时出现的提示。</description>
+		</attribute>
+		<attribute>
+			<name>tipPosition</name>
+			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+		</attribute>
+		<attribute>
+			<name>deltaX</name>
+			<description>提示框在水平方向上位移。</description>
+		</attribute>
+		<attribute>
+			<name>novalidate</name>
+			<description>为true时关闭验证功能。</description>
+		</attribute>
+		<!-- TextBox 属性 -->
+		<attribute>
+			<name>width</name>
+			<description>组件的宽度。</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>组件的高度。</description>
+		</attribute>
+		<attribute>
+			<name>prompt</name>
+			<description>在输入框显示提示消息。</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<description>默认值</description>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>multiline</name>
+			<description>定义是否是多行文本框。</description>
+		</attribute>
+		<attribute>
+			<name>editable</name>
+			<description>定义用户是否可以直接在该字段内输入文字。</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<description>定义是否禁用该字段。</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<description>定义是否将该控件设为只读。</description>
+		</attribute>
+		<attribute>
+			<name>icons</name>
+			<description>在文本框删贡献是图标。每一项都有以下属性：iconCls：类型string，图标的class名称；disabled：类型boolean，指明是否禁用该图标；handler：类型function，用于处理点击该图标以后的动作。</description>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<description>在文本框显示背景图标。</description>
+		</attribute>
+		<attribute>
+			<name>iconAlign</name>
+			<description>背景图标的位置。可用值有："left", "right"。</description>
+		</attribute>
+		<attribute>
+			<name>iconWidth</name>
+			<description>图标宽度。</description>
+		</attribute>
+		<attribute>
+			<name>buttonText</name>
+			<description>文本框附加按钮显示的文本内容。</description>
+		</attribute>
+		<attribute>
+			<name>buttonIcon</name>
+			<description>文本框附加按钮显示的图标。</description>
+		</attribute>
+		<attribute>
+			<name>buttonAlign</name>
+			<description>附加按钮的位置。可用值有："left", "right"。</description>
+		</attribute>
+		<!-- TextBox 事件 -->
+		<attribute>
+			<name>onChange</name>
+			<description>在字段值更改的时候触发。参数：newValue, oldValue </description>
+		</attribute>
+		<attribute>
+			<name>onResize</name>
+			<description>在文本框大小改变的时候触发。参数：width, height </description>
+		</attribute>
+		<attribute>
+			<name>onClickButton</name>
+			<description>在用户点击按钮的时候触发。</description>
+		</attribute>
+		<attribute>
+			<name>onClickIcon</name>
+			<description>在用户点击图标的时候触发。参数：index </description>
+		</attribute>
+		<!-- FileBox -->
+		<attribute>
+			<name>buttonText</name>
+			<description>在文本框上附加的按钮显示的文本。</description>
+		</attribute>
+		<attribute>
+			<name>buttonIcon</name>
+			<description>在文本框上附加的按钮显示的图标。</description>
+		</attribute>
+		<attribute>
+			<name>buttonAlign</name>
+			<description>附加按钮位置。可用值有："left", "right"。</description>
+		</attribute>
+	</tag>
+
+	<!-- Pagination -->
+	<tag>
+		<name>pagination</name>
+		<tag-class>org.kayura.tags.easyui.PaginationTag</tag-class>
+		<description>
+		<![CDATA[该分页控件允许用户导航页面的数据。它支持页面导航和页面长度选择的选项设置。
+		用户可以在分页控件上添加自定义按钮，以增强其功能。]]>
+		</description>
+		<body-content>empty</body-content>
+		<!-- HTML 属性 -->
+		<attribute>
+			<name>id</name>
+			<description>菜单标签ID</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<description>HTML标签样式定义.</description>
+		</attribute>
+		<!-- Pagination -->
+		<attribute>
+			<name>total</name>
+			<description>总记录数，在分页控件创建时初始的值。</description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<description>页面大小。</description>
+		</attribute>
+		<attribute>
+			<name>pageNumber</name>
+			<description>在分页控件创建的时候显示的页数。</description>
+		</attribute>
+		<attribute>
+			<name>pageList</name>
+			<description>用户可以改变页面大小。pageList属性定义了页面导航展示的页码。 </description>
+		</attribute>
+		<attribute>
+			<name>loading</name>
+			<description>定义数据是否正在载入。</description>
+		</attribute>
+		<attribute>
+			<name>buttons</name>
+			<description>
+			<![CDATA[自定义按钮，可用值有：<br>
+			①. 每个按钮都有2个属性：<br>
+			iconCls：显示背景图片的CSS类ID<br>
+			handler：当按钮被点击时调用的一个句柄函数。 <br>
+			②. 页面已存在元素的选择器对象（例如：buttons:'#btnDiv'）<br>
+			（该属性值自1.3.4版开始可用）]]>
+		</description>
+		</attribute>
+		<attribute>
+			<name>layout</name>
+			<description>
+			<![CDATA[分页控件布局定义。（该属性值自1.3.5版开始可用）
+			布局选项可以包含一个或多个值：<br>
+			1) list：页面显示条数列表。<br>
+			2) sep：页面按钮分割线。<br>
+			3) first：首页按钮。<br>
+			4) prev：上一页按钮。<br>
+			5) next：下一页按钮。<br>
+			6) last：尾页按钮。<br>
+			7) refresh：刷新按钮。<br>
+			8) manual：手工输入当前页的输入框。<br>
+			9) links：页面数链接。]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>links</name>
+			<description>该链接数仅在“links”项包含在“layout”中的时候有效。（该属性值自1.3.5版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>showPageList</name>
+			<description>定义是否显示页面导航列表。</description>
+		</attribute>
+		<attribute>
+			<name>showRefresh</name>
+			<description>定义是否显示刷新按钮。</description>
+		</attribute>
+		<attribute>
+			<name>beforePageText</name>
+			<description>在输入组件之前显示一个label标签。</description>
+		</attribute>
+		<attribute>
+			<name>afterPageText</name>
+			<description>在输入组件之后显示一个label标签。</description>
+		</attribute>
+		<attribute>
+			<name>displayMsg</name>
+			<description>显示页面信息。</description>
+		</attribute>
+		<attribute>
+			<name>onSelectPage</name>
+			<description>
+			<![CDATA[用户选择一个新页面的时候触发。回调函数包含2个参数：
+			pageNumber：新的页数。
+			pageSize: 页面大小（每页显示的条数）。]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onBeforeRefresh</name>
+			<description>在点击刷新按钮刷新之前触发，返回false可以取消刷新动作。</description>
+		</attribute>
+		<attribute>
+			<name>onRefresh</name>
+			<description>刷新之后触发。</description>
+		</attribute>
+		<attribute>
+			<name>onChangePageSize</name>
+			<description>在页面更改页面大小的时候触发。</description>
+		</attribute>
+	</tag>
+
+	<!-- ProgressBar -->
+	<tag>
+		<name>progressbar</name>
+		<description></description>
+		<tag-class>org.kayura.tags.easyui.ProgressBarTag</tag-class>
+		<body-content>jsp</body-content>
+		<!-- ProgressBar -->
+		<attribute>
+			<name>width</name>
+			<description>设置进度条宽度。</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>设置进度条高度。（该属性自1.3.2版开始可用）</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<description>百分比值。</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<description>在进度条上显示的文本。</description>
+		</attribute>
+	</tag>
+
 	<!-- SwitchButton -->
 	<tag>
 		<name>switchbutton</name>
@@ -5870,7 +6161,7 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		</attribute>
 	</tag>
 
-	<!-- org.kayura.tags.common.HiddenTag -->
+	<!-- Hidden -->
 	<tag>
 		<name>hidden</name>
 		<tag-class>org.kayura.tags.common.HiddenTag</tag-class>
