@@ -19,7 +19,7 @@
 	<li>Body 页面级的布局标签；</li>
 	<li>Layout 局部布局标签、Dock 布局中的块；</li>
 </ul>
-<h2>编辑模板页（_editor.jsp）</h2>
+<h2>编辑模板页（_dialog.jsp）</h2>
 <pre class="EnlighterJSRAW">&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -52,78 +52,43 @@
 &lt;/html&gt;</pre>
 <h2> 编辑页面（edit.jsp）</h2>
 <pre class="EnlighterJSRAW">&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
-&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %&gt;
 
-&lt;k:section name="title"&gt;用户管理&lt;/k:section&gt;
-&lt;k:section name="head"&gt;&lt;/k:section&gt;
-
-&lt;!-- 编辑内容区域 body --&gt;
-&lt;k:section name="body"&gt;
-&lt;k:form id="ff" url="${root}/admin/user/save.json" success="function(data){ juasp.closeWin(1) }"&gt;
-    &lt;k:hidden id="userId" value="${model.userId}"/&gt;
-    &lt;table cellpadding="5"&gt;
-        &lt;tr&gt;
-            &lt;td&gt;登录名&lt;/td&gt;
-            &lt;td&gt;&lt;k:textbox id="userName" width="180px" value="${model.userName}" required="true" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;显示名:&lt;/td&gt;
-            &lt;td&gt;&lt;k:textbox id="displayName" width="180px" value="${model.displayName}" required="true" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;c:if test="${empty model.userId}"&gt;
-        &lt;tr&gt;
-            &lt;td&gt;初始密码:&lt;/td&gt;
-            &lt;td&gt;&lt;k:textbox id="password" width="180px" required="true" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;/c:if&gt;
-        &lt;tr&gt;
-            &lt;td&gt;电子邮件:&lt;/td&gt;
-            &lt;td&gt;&lt;k:textbox id="email" width="180px" value="${model.email}" required="true" validType="email" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;手机号:&lt;/td&gt;
-            &lt;td&gt;&lt;k:textbox id="mobileNo" width="180px" value="${model.mobileNo}" required="true" validType="length[11,11]" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;关键字:&lt;/td&gt;
-            &lt;td&gt;&lt;k:textbox id="keyword" width="180px" value="${model.keyword}" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;过期时间:&lt;/td&gt;
-            &lt;td&gt;&lt;k:databox id="expireTime" width="180px" value="${model.expireTime}" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;所属角色:&lt;/td&gt;
-            &lt;td&gt;&lt;k:combobox id="roles" width="180px" height="auto" value="${model.roles}" multiple="true" required="true"&gt;
-                    &lt;k:option&gt;ROOT&lt;/k:option&gt;
-                    &lt;k:option&gt;ADMIN&lt;/k:option&gt;
-                    &lt;k:option&gt;USER&lt;/k:option&gt;
-                &lt;/k:combobox&gt;
-            &lt;/td&gt;
-            &lt;td&gt;可选：ROOT,ADMIN,USER。默认为USER&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;是否启用:&lt;/td&gt;
-            &lt;td&gt;&lt;k:switchbutton id="isEnabled" checked="${model.isEnabled}" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;是否锁定:&lt;/td&gt;
-            &lt;td&gt;&lt;k:switchbutton id="isLocked" checked="${model.isLocked}" /&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/k:form&gt;
+&lt;k:section name="title"&gt;数据词典管理&lt;/k:section&gt;
+&lt;k:section name="head"&gt;
 &lt;/k:section&gt;
 
-&lt;!-- 工具栏区域 tool --&gt;
+&lt;k:section name="body"&gt;
+    &lt;k:form id="ff" url="${root}/admin/dict/save.json" success="function(data){ juasp.closeWin(1) }"&gt;
+        &lt;k:hidden id="id" value="${model.id}" /&gt;
+        &lt;k:hidden id="dictId" value="${model.dictId}" /&gt;
+        &lt;k:hidden id="parentId" value="${model.parentId}" /&gt;
+        &lt;table cellpadding="5"&gt;
+            &lt;tr&gt;
+                &lt;td&gt;所属词典:&lt;/td&gt;
+                &lt;td&gt;${model.dictName}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;c:if test="${treeType}"&gt;
+            &lt;tr&gt;
+                &lt;td&gt;上级词典:&lt;/td&gt;
+                &lt;td&gt;${model.parentName}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/c:if&gt;
+            &lt;tr&gt;
+                &lt;td&gt;词典名称:&lt;/td&gt;
+                &lt;td&gt;&lt;k:textbox name="name" width="180px" value="${model.name}" required="true" validType='length[1,32]' /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;词典值:&lt;/td&gt;
+                &lt;td&gt;&lt;k:textbox name="value" width="180px" value="${model.value}" required="true" validType='length[1,1024]' /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;排序值:&lt;/td&gt;
+                &lt;td&gt;&lt;k:numberbox name="serial" style="width:180px" value="${model.serial}" required="true" min="0" precision="0" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/k:form&gt;
+&lt;/k:section&gt;
+
 &lt;k:section name="tool"&gt;
     &lt;k:linkbutton style="width:80px" iconCls="icon-ok" onClick="$('#ff').form('submit')" text="提交" /&gt;
     &lt;k:linkbutton style="width:80px" iconCls="icon-cancel" onClick="juasp.closeWin(0)" text="取消" /&gt;
