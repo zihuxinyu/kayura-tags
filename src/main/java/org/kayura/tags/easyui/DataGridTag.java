@@ -29,7 +29,7 @@ public class DataGridTag extends PanelTag {
 	private Boolean autoRowHeight;
 	private Object toolbar;
 	private Boolean striped;
-	private String method;
+	// private String method;
 	private Boolean nowrap;
 	private String idField;
 	private String url;
@@ -54,15 +54,15 @@ public class DataGridTag extends PanelTag {
 	private Integer scrollbarSize;
 
 	private String rowStyler;
-	private String loader;
+	// private String loader;
 	private String loadFilter;
 
 	private String editors;
 	private String view;
 
 	private String onLoadSuccess;
-	private String onLoadError;
-	private String onBeforeLoad;
+	// private String onLoadError;
+	// private String onBeforeLoad;
 	private String onClickRow;
 	private String onDblClickRow;
 	private String onClickCell;
@@ -135,7 +135,7 @@ public class DataGridTag extends PanelTag {
 		}
 
 		putMap(map, "striped", striped);
-		putMap(map, "method", method);
+		//putMap(map, "method", method);
 		putMap(map, "nowrap", nowrap);
 		putMap(map, "idField", idField);
 		putMap(map, "url", url);
@@ -170,7 +170,7 @@ public class DataGridTag extends PanelTag {
 		putMap(map, "scrollbarSize", scrollbarSize);
 
 		putMap(map, "rowStyler", RawString.make(rowStyler));
-		putMap(map, "loader", RawString.make(loader));
+		// putMap(map, "loader", RawString.make(loader));
 		putMap(map, "loadFilter", RawString.make(loadFilter));
 
 		putMap(map, "editors", RawString.make(editors));
@@ -179,8 +179,8 @@ public class DataGridTag extends PanelTag {
 		// 事件...
 
 		putMap(map, "onLoadSuccess", RawString.make(onLoadSuccess));
-		putMap(map, "onLoadError", RawString.make(onLoadError));
-		putMap(map, "onBeforeLoad", RawString.make(onBeforeLoad));
+		// putMap(map, "onLoadError", RawString.make(onLoadError));
+		// putMap(map, "onBeforeLoad", RawString.make(onBeforeLoad));
 		putMap(map, "onClickRow", RawString.make(onClickRow));
 		putMap(map, "onDblClickRow", RawString.make(onDblClickRow));
 		putMap(map, "onClickCell", RawString.make(onClickCell));
@@ -293,14 +293,6 @@ public class DataGridTag extends PanelTag {
 
 	public void setStriped(Boolean striped) {
 		this.striped = striped;
-	}
-
-	public String getMethod() {
-		return method;
-	}
-
-	public void setMethod(String method) {
-		this.method = method;
 	}
 
 	public Boolean getNowrap() {
@@ -487,14 +479,6 @@ public class DataGridTag extends PanelTag {
 		this.rowStyler = rowStyler;
 	}
 
-	public String getLoader() {
-		return loader;
-	}
-
-	public void setLoader(String loader) {
-		this.loader = loader;
-	}
-
 	public String getLoadFilter() {
 		return loadFilter;
 	}
@@ -525,22 +509,6 @@ public class DataGridTag extends PanelTag {
 
 	public void setOnLoadSuccess(String onLoadSuccess) {
 		this.onLoadSuccess = onLoadSuccess;
-	}
-
-	public String getOnLoadError() {
-		return onLoadError;
-	}
-
-	public void setOnLoadError(String onLoadError) {
-		this.onLoadError = onLoadError;
-	}
-
-	public String getOnBeforeLoad() {
-		return onBeforeLoad;
-	}
-
-	public void setOnBeforeLoad(String onBeforeLoad) {
-		this.onBeforeLoad = onBeforeLoad;
 	}
 
 	public String getOnClickRow() {

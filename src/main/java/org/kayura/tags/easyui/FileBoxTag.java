@@ -15,9 +15,9 @@ public class FileBoxTag extends TextBoxTag {
 
 	private static final long serialVersionUID = 6324386899135233549L;
 
-	private String buttonText;
-	private String buttonIcon;
-	private String buttonAlign;
+	//private String buttonText;
+	//private String buttonIcon;
+	//private String buttonAlign;
 
 	@Override
 	public String getEasyUITag() {
@@ -29,35 +29,11 @@ public class FileBoxTag extends TextBoxTag {
 
 		Map<String, Object> map = super.makeOptions();
 
-		putMap(map, "buttonText", buttonText);
-		putMap(map, "buttonIcon", buttonIcon);
-		putMap(map, "buttonAlign", buttonAlign);
+		//putMap(map, "buttonText", buttonText);
+		//putMap(map, "buttonIcon", buttonIcon);
+		//putMap(map, "buttonAlign", buttonAlign);
 
 		return map;
-	}
-
-	public String getButtonText() {
-		return buttonText;
-	}
-
-	public void setButtonText(String buttonText) {
-		this.buttonText = buttonText;
-	}
-
-	public String getButtonIcon() {
-		return buttonIcon;
-	}
-
-	public void setButtonIcon(String buttonIcon) {
-		this.buttonIcon = buttonIcon;
-	}
-
-	public String getButtonAlign() {
-		return buttonAlign;
-	}
-
-	public void setButtonAlign(String buttonAlign) {
-		this.buttonAlign = buttonAlign;
 	}
 
 }

@@ -21,8 +21,8 @@ public class BodyTag extends TagRender {
 
 	private static final long serialVersionUID = -7338802774183130605L;
 
-	private Boolean full = false;
-	private Boolean layout = false;
+	private Boolean full;
+	private Boolean layout;
 	private String padding;
 
 	@Override
@@ -129,7 +129,7 @@ public class BodyTag extends TagRender {
 	}
 
 	public Boolean getFull() {
-		return full;
+		return full != null ? full : false;
 	}
 
 	public void setFull(Boolean full) {
@@ -137,7 +137,7 @@ public class BodyTag extends TagRender {
 	}
 
 	public Boolean getLayout() {
-		return layout;
+		return layout != null ? layout : false;
 	}
 
 	public void setLayout(Boolean layout) {

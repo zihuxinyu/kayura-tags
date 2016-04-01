@@ -16,7 +16,7 @@ public class SheetTag extends PanelTag {
 	private static final long serialVersionUID = 8035372739627057738L;
 
 	private Boolean selected;
-	private Boolean collapsible;
+	// private Boolean collapsible;
 
 	@Override
 	public String getEasyUITag() {
@@ -29,7 +29,7 @@ public class SheetTag extends PanelTag {
 		Map<String, Object> map = super.makeOptions();
 
 		putMap(map, "selected", selected);
-		putMap(map, "collapsible", collapsible);
+		// putMap(map, "collapsible", collapsible);
 
 		return map;
 	}
@@ -40,14 +40,6 @@ public class SheetTag extends PanelTag {
 
 	public void setSelected(Boolean selected) {
 		this.selected = selected;
-	}
-
-	public Boolean getCollapsible() {
-		return collapsible;
-	}
-
-	public void setCollapsible(Boolean collapsible) {
-		this.collapsible = collapsible;
 	}
 
 }

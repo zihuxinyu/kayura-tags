@@ -20,7 +20,7 @@ public class DateBoxTag extends ComboTag {
 	private String currentText;
 	private String closeText;
 	private String okText;
-	private Boolean disabled;
+	//private Boolean disabled;
 
 	private String buttons;
 
@@ -42,7 +42,7 @@ public class DateBoxTag extends ComboTag {
 
 		putMap(map, "closeText", closeText);
 		putMap(map, "okText", okText);
-		putMap(map, "disabled", disabled);
+		//putMap(map, "disabled", disabled);
 
 		putMap(map, "buttons", RawString.make(buttons));
 
@@ -77,14 +77,6 @@ public class DateBoxTag extends ComboTag {
 
 	public void setOkText(String okText) {
 		this.okText = okText;
-	}
-
-	public Boolean getDisabled() {
-		return disabled;
-	}
-
-	public void setDisabled(Boolean disabled) {
-		this.disabled = disabled;
 	}
 
 	public String getButtons() {
