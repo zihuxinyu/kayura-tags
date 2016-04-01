@@ -1,11 +1,11 @@
 已经完成 初版 Easyui Tag 标签的开发、以下是已经支持的标签：
 <ul>
 	<li>基本标签：RenderSection、Section、Resources、Resource、Hidden；</li>
-	<li>EasyUI 基础：SearchBox、Tooltip；</li>
+	<li>EasyUI 基础：Pagination、ProgressBar、SearchBox、Tooltip；</li>
 	<li>EasyUI 布局：Body、Panel、Tabs（TagPage）、Accordion（Sheet）、Layout（Dock）；</li>
 	<li>EasyUI 窗口：Window、Dialog；</li>
-	<li>EasyUI 表格与树：DataGrid（Columns、Column）、DataList、Tree、TreeGrid；</li>
-	<li>EasyUI 表单：Form、ValidateBox、TextBox、Combo、ComboBox、ComboTree、ComboGrid、NumberBox、DateBox、DateTimeBox、DateTimeSpinner、Calendar、NumberSpinner、TimeSpinner、</li>
+	<li>EasyUI 表格与树：DataGrid（Columns、Column）、DataList、Tree、TreeGrid、PropertyGrid；</li>
+	<li>EasyUI 表单：Form、ValidateBox、TextBox、Combo、ComboBox、ComboTree、ComboGrid、NumberBox、DateBox、DateTimeBox、DateTimeSpinner、Calendar、NumberSpinner、TimeSpinner、Slider、FileBox；</li>
 	<li>EasyUI 菜单与按钮：Menu（MenuItem、SubItem）、LinkButton、MenuButton、SplitButton、SwitchButton；</li>
 </ul>
 <h1>快速开始</h1>
@@ -100,4 +100,4 @@
 
 使用模板页，可以更多容易的控制页面的布局，让开发者更关系业务表单的内容。
 
-标签库 Github 地址：https://github.com/KayuraTeam/kayura-tags
+标签库 Github 地址：<a href="https://github.com/KayuraTeam/kayura-tags" target="_blank">https://github.com/KayuraTeam/kayura-tags</a>
