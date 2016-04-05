@@ -20,7 +20,8 @@
 	<li>Layout 局部布局标签、Dock 布局中的块；</li>
 </ul>
 <h2>编辑模板页（_dialog.jsp）</h2>
-<pre class="EnlighterJSRAW">&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
+` ``html
+&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -49,9 +50,11 @@
         &lt;/k:dock&gt;
     &lt;/k:layout&gt;
 &lt;/k:body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;
+` ``
 <h2> 编辑页面（edit.jsp）</h2>
-<pre class="EnlighterJSRAW">&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
+` ``html
+&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
 
 &lt;k:section name="title"&gt;数据词典管理&lt;/k:section&gt;
 &lt;k:section name="head"&gt;
@@ -94,7 +97,8 @@
     &lt;k:linkbutton style="width:80px" iconCls="icon-cancel" onClick="juasp.closeWin(0)" text="取消" /&gt;
 &lt;/k:section&gt;
 
-&lt;%@ include file="/views/shared/_dialog.jsp"%&gt;</pre>
+&lt;%@ include file="/views/shared/_dialog.jsp"%&gt;
+` ``
 <h2>最终显示效果</h2>
 <img class="alignnone wp-image-50" src="http://kayura.org/blog/wp-content/uploads/2016/03/编辑页面示例-300x180.jpg" alt="编辑页面示例" width="413" height="248" />
 
