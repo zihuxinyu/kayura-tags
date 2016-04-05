@@ -20,13 +20,13 @@
 	<li>Layout 局部布局标签、Dock 布局中的块；</li>
 </ul>
 <h2>编辑模板页（_dialog.jsp）</h2>
-` ``html
-&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;&lt;k:renderSection name="title"/&gt;&lt;/title&gt;
-    &lt;k:resources location="res"&gt;
+```javascript
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title><k:renderSection name="title"/></title>
+    <k:resources location="res">
         easyui/themes/${theme}/easyui.css
         easyui/themes/icon.css
         js/juasp.css
@@ -35,70 +35,70 @@
         easyui/easyui-lang-zh_CN.js
         js/juasp-core.js
         js/juasp-easyui.js
-    &lt;/k:resources&gt;
-    &lt;k:renderSection name="head"/&gt;
-&lt;/head&gt;
-&lt;k:body full="true" padding="5px"&gt;
-    &lt;k:layout fit="true"&gt;
-        &lt;k:dock region="center" style="padding: 10px 30px 10px 30px;"&gt;
-            &lt;!-- 编辑内容区域 body --&gt;
-            &lt;k:renderSection name="body"/&gt;
-        &lt;/k:dock&gt;
-        &lt;k:dock region="south" border="false" style="text-align:right;padding:5px 0 0;"&gt;
-            &lt;!-- 工具栏区域 tool --&gt;
-            &lt;k:renderSection name="tool"/&gt;
-        &lt;/k:dock&gt;
-    &lt;/k:layout&gt;
-&lt;/k:body&gt;
-&lt;/html&gt;
-` ``
+    </k:resources>
+    <k:renderSection name="head"/>
+</head>
+<k:body full="true" padding="5px">
+    <k:layout fit="true">
+        <k:dock region="center" style="padding: 10px 30px 10px 30px;">
+            <!-- 编辑内容区域 body -->
+            <k:renderSection name="body"/>
+        </k:dock>
+        <k:dock region="south" border="false" style="text-align:right;padding:5px 0 0;">
+            <!-- 工具栏区域 tool -->
+            <k:renderSection name="tool"/>
+        </k:dock>
+    </k:layout>
+</k:body>
+</html>
+```
 <h2> 编辑页面（edit.jsp）</h2>
-` ``html
-&lt;%@ page language="java" contentType="text/html; charset=UTF-8"%&gt;
+```javascript
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 
-&lt;k:section name="title"&gt;数据词典管理&lt;/k:section&gt;
-&lt;k:section name="head"&gt;
-&lt;/k:section&gt;
+<k:section name="title">数据词典管理</k:section>
+<k:section name="head">
+</k:section>
 
-&lt;k:section name="body"&gt;
-    &lt;k:form id="ff" url="${root}/admin/dict/save.json" success="function(data){ juasp.closeWin(1) }"&gt;
-        &lt;k:hidden id="id" value="${model.id}" /&gt;
-        &lt;k:hidden id="dictId" value="${model.dictId}" /&gt;
-        &lt;k:hidden id="parentId" value="${model.parentId}" /&gt;
-        &lt;table cellpadding="5"&gt;
-            &lt;tr&gt;
-                &lt;td&gt;所属词典:&lt;/td&gt;
-                &lt;td&gt;${model.dictName}&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;c:if test="${treeType}"&gt;
-            &lt;tr&gt;
-                &lt;td&gt;上级词典:&lt;/td&gt;
-                &lt;td&gt;${model.parentName}&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;/c:if&gt;
-            &lt;tr&gt;
-                &lt;td&gt;词典名称:&lt;/td&gt;
-                &lt;td&gt;&lt;k:textbox name="name" width="180px" value="${model.name}" required="true" validType='length[1,32]' /&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;词典值:&lt;/td&gt;
-                &lt;td&gt;&lt;k:textbox name="value" width="180px" value="${model.value}" required="true" validType='length[1,1024]' /&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;排序值:&lt;/td&gt;
-                &lt;td&gt;&lt;k:numberbox name="serial" style="width:180px" value="${model.serial}" required="true" min="0" precision="0" /&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-    &lt;/k:form&gt;
-&lt;/k:section&gt;
+<k:section name="body">
+    <k:form id="ff" url="${root}/admin/dict/save.json" success="function(data){ juasp.closeWin(1) }">
+        <k:hidden id="id" value="${model.id}" />
+        <k:hidden id="dictId" value="${model.dictId}" />
+        <k:hidden id="parentId" value="${model.parentId}" />
+        <table cellpadding="5">
+            <tr>
+                <td>所属词典:</td>
+                <td>${model.dictName}</td>
+            </tr>
+            <c:if test="${treeType}">
+            <tr>
+                <td>上级词典:</td>
+                <td>${model.parentName}</td>
+            </tr>
+            </c:if>
+            <tr>
+                <td>词典名称:</td>
+                <td><k:textbox name="name" width="180px" value="${model.name}" required="true" validType='length[1,32]' /></td>
+            </tr>
+            <tr>
+                <td>词典值:</td>
+                <td><k:textbox name="value" width="180px" value="${model.value}" required="true" validType='length[1,1024]' /></td>
+            </tr>
+            <tr>
+                <td>排序值:</td>
+                <td><k:numberbox name="serial" style="width:180px" value="${model.serial}" required="true" min="0" precision="0" /></td>
+            </tr>
+        </table>
+    </k:form>
+</k:section>
 
-&lt;k:section name="tool"&gt;
-    &lt;k:linkbutton style="width:80px" iconCls="icon-ok" onClick="$('#ff').form('submit')" text="提交" /&gt;
-    &lt;k:linkbutton style="width:80px" iconCls="icon-cancel" onClick="juasp.closeWin(0)" text="取消" /&gt;
-&lt;/k:section&gt;
+<k:section name="tool">
+    <k:linkbutton style="width:80px" iconCls="icon-ok" onClick="$('#ff').form('submit')" text="提交" />
+    <k:linkbutton style="width:80px" iconCls="icon-cancel" onClick="juasp.closeWin(0)" text="取消" />
+</k:section>
 
-&lt;%@ include file="/views/shared/_dialog.jsp"%&gt;
-` ``
+<%@ include file="/views/shared/_dialog.jsp"%>
+```
 <h2>最终显示效果</h2>
 <img class="alignnone wp-image-50" src="http://kayura.org/blog/wp-content/uploads/2016/03/编辑页面示例-300x180.jpg" alt="编辑页面示例" width="413" height="248" />
 
