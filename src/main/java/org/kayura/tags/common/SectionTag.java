@@ -9,6 +9,8 @@ import javax.servlet.jsp.tagext.BodyContent;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 import javax.servlet.jsp.tagext.Tag;
 
+import org.kayura.tags.types.TagUtils;
+
 /**
  * SectionTag
  *
@@ -32,7 +34,12 @@ public class SectionTag extends BodyTagSupport {
 
 		if (!isOverrided()) {
 			BodyContent b = getBodyContent();
-			pageContext.setAttribute(TAG_NAME + name, b.getString());
+			if (b != null) {
+				String content = b.getString();
+				if (!TagUtils.isEmpty(content)) {
+					pageContext.setAttribute(TAG_NAME + name, content);
+				}
+			}
 		}
 		return Tag.EVAL_PAGE;
 	}
