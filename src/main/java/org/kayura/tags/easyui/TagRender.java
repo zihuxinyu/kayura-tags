@@ -16,6 +16,7 @@ import javax.servlet.jsp.tagext.Tag;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.kayura.tags.easyui.types.Toolbar;
+import org.kayura.tags.types.FucString;
 import org.kayura.tags.types.RawString;
 import org.kayura.tags.types.TagUtils;
 
@@ -142,9 +143,14 @@ public abstract class TagRender extends BodyTagSupport {
 
 					String k = o.getKey();
 					if (v instanceof RawString) {
-						String sv = ((RawString) v).getValue();
-						if (!isEmpty(sv)) {
-							sb.append("," + k + ":" + v.toString());
+						String rs = ((RawString) v).getValue();
+						if (!isEmpty(rs)) {
+							sb.append("," + k + ":" + rs);
+						}
+					} else if (v instanceof FucString) {
+						String fs = ((FucString) v).getContent();
+						if (!isEmpty(fs)) {
+							sb.append("," + k + ":" + fs);
 						}
 					} else if (v instanceof Integer || v instanceof Boolean || v instanceof Double) {
 						sb.append("," + k + ":" + v);

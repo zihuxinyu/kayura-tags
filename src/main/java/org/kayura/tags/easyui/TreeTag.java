@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.servlet.jsp.JspWriter;
 
+import org.kayura.tags.types.FucString;
 import org.kayura.tags.types.RawString;
 import org.kayura.tags.types.TagUtils;
 
@@ -116,31 +117,31 @@ public class TreeTag extends TagRender {
 		putMap(map, "loader", RawString.make(loader));
 		putMap(map, "loadFilter", RawString.make(loadFilter));
 
-		putMap(map, "onClick", RawString.make(onClick));
-		putMap(map, "onDblClick", RawString.make(onDblClick));
-		putMap(map, "onBeforeLoad", RawString.make(onBeforeLoad));
-		putMap(map, "onLoadSuccess", RawString.make(onLoadSuccess));
-		putMap(map, "onLoadError", RawString.make(onLoadError));
-		putMap(map, "onBeforeExpand", RawString.make(onBeforeExpand));
-		putMap(map, "onExpand", RawString.make(onExpand));
-		putMap(map, "onBeforeCollapse", RawString.make(onBeforeCollapse));
-		putMap(map, "onCollapse", RawString.make(onCollapse));
-		putMap(map, "onBeforeCheck", RawString.make(onBeforeCheck));
-		putMap(map, "onCheck", RawString.make(onCheck));
-		putMap(map, "onBeforeSelect", RawString.make(onBeforeSelect));
-		putMap(map, "onSelect", RawString.make(onSelect));
-		putMap(map, "onContextMenu", RawString.make(onContextMenu));
-		putMap(map, "onBeforeDrag", RawString.make(onBeforeDrag));
-		putMap(map, "onStartDrag", RawString.make(onStartDrag));
-		putMap(map, "onStopDrag", RawString.make(onStopDrag));
-		putMap(map, "onDragEnter", RawString.make(onDragEnter));
-		putMap(map, "onDragOver", RawString.make(onDragOver));
-		putMap(map, "onDragLeave", RawString.make(onDragLeave));
-		putMap(map, "onBeforeDrop", RawString.make(onBeforeDrop));
-		putMap(map, "onDrop", RawString.make(onDrop));
-		putMap(map, "onBeforeEdit", RawString.make(onBeforeEdit));
-		putMap(map, "onAfterEdit", RawString.make(onAfterEdit));
-		putMap(map, "onCancelEdit", RawString.make(onCancelEdit));
+		putMap(map, "onClick", FucString.make(onClick));
+		putMap(map, "onDblClick", FucString.make(onDblClick));
+		putMap(map, "onBeforeLoad", FucString.make(onBeforeLoad));
+		putMap(map, "onLoadSuccess", FucString.make(onLoadSuccess));
+		putMap(map, "onLoadError", FucString.make(onLoadError));
+		putMap(map, "onBeforeExpand", FucString.make(onBeforeExpand));
+		putMap(map, "onExpand", FucString.make(onExpand));
+		putMap(map, "onBeforeCollapse", FucString.make(onBeforeCollapse));
+		putMap(map, "onCollapse", FucString.make(onCollapse));
+		putMap(map, "onBeforeCheck", FucString.make(onBeforeCheck));
+		putMap(map, "onCheck", FucString.make(onCheck));
+		putMap(map, "onBeforeSelect", FucString.make(onBeforeSelect));
+		putMap(map, "onSelect", FucString.make(onSelect));
+		putMap(map, "onContextMenu", FucString.make(onContextMenu));
+		putMap(map, "onBeforeDrag", FucString.make(onBeforeDrag));
+		putMap(map, "onStartDrag", FucString.make(onStartDrag));
+		putMap(map, "onStopDrag", FucString.make(onStopDrag));
+		putMap(map, "onDragEnter", FucString.make(onDragEnter));
+		putMap(map, "onDragOver", FucString.make(onDragOver));
+		putMap(map, "onDragLeave", FucString.make(onDragLeave));
+		putMap(map, "onBeforeDrop", FucString.make(onBeforeDrop));
+		putMap(map, "onDrop", FucString.make(onDrop));
+		putMap(map, "onBeforeEdit", FucString.make(onBeforeEdit));
+		putMap(map, "onAfterEdit", FucString.make(onAfterEdit));
+		putMap(map, "onCancelEdit", FucString.make(onCancelEdit));
 
 		return map;
 	}
