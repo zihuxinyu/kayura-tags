@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.servlet.jsp.JspWriter;
 
+import org.kayura.tags.types.FucString;
 import org.kayura.tags.types.RawString;
 
 /**
@@ -26,9 +27,10 @@ public class FormTag extends TagRender {
 	private Object queryParams;
 	private String url;
 	private Boolean multipart;
+	
+	private String success;
 
 	private String onSubmit;
-	private String success;
 	private String onBeforeLoad;
 	private String onLoadSuccess;
 	private String onLoadError;
@@ -59,8 +61,9 @@ public class FormTag extends TagRender {
 			putMap(map, "queryParams", queryParams);
 		}
 
+		putMap(map, "success", FucString.make(success));
+		
 		putMap(map, "onSubmit", RawString.make(onSubmit));
-		putMap(map, "success", RawString.make(success));
 		putMap(map, "onBeforeLoad", RawString.make(onBeforeLoad));
 		putMap(map, "onLoadSuccess", RawString.make(onLoadSuccess));
 		putMap(map, "onLoadError", RawString.make(onLoadError));

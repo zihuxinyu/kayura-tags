@@ -43,36 +43,31 @@ public class FucString {
 		// (){ xxx }
 		// xxxx
 
-		if (js.startsWith("function") || js.startsWith("(")) {
-
-			StringBuilder sb = new StringBuilder();
-			if (!js.startsWith("function")) {
-				sb.append("function");
-			} else {
-				js = js.substring(7);
-			}
-
-			if (!js.trim().startsWith("(")) {
-				sb.append("()");
-			} else {
-
-				int len = js.indexOf(")") + 1;
-				sb.append(js.substring(0, len));
-				js = js.substring(len).trim();
-			}
-
-			if (!js.startsWith("{")) {
-				sb.append("{");
-			}
-			sb.append(js);
-			if (!js.endsWith("}")) {
-				sb.append("}");
-			}
-
-			return sb.toString();
+		StringBuilder sb = new StringBuilder();
+		if (!js.startsWith("function")) {
+			sb.append("function");
 		} else {
-			return this.content;
+			js = js.substring(7);
 		}
+
+		if (!js.trim().startsWith("(")) {
+			sb.append("()");
+		} else {
+
+			int len = js.indexOf(")") + 1;
+			sb.append(js.substring(0, len));
+			js = js.substring(len).trim();
+		}
+
+		if (!js.startsWith("{")) {
+			sb.append("{");
+		}
+		sb.append(js);
+		if (!js.endsWith("}")) {
+			sb.append("}");
+		}
+
+		return sb.toString();
 	}
 
 	public void setContent(String content) {
