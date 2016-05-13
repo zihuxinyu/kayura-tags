@@ -6993,6 +6993,10 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
+			<name>id</name>
+			<description>可定义的元素Id.</description>
+		</attribute>
+		<attribute>
 			<name>name</name>
 			<description>指定的资源相对路径及文件名。</description>
 			<required>true</required>

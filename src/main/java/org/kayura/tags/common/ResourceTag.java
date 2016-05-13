@@ -11,6 +11,8 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
+import org.kayura.tags.types.TagUtils;
+
 /**
  * ResourceTag
  *
@@ -18,9 +20,10 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
  */
 public class ResourceTag extends SimpleTagSupport {
 
-	static final String LINK_TAG = "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n";
-	static final String SCRIPT_TAG = "<script type=\"text/javascript\" src=\"%s\"></script>\n";
+	static final String LINK_TAG = "<link %s rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n";
+	static final String SCRIPT_TAG = "<script %s type=\"text/javascript\" src=\"%s\"></script>\n";
 
+	private String id;
 	private String location;
 	private String name;
 
@@ -45,13 +48,17 @@ public class ResourceTag extends SimpleTagSupport {
 
 			if (type != null) {
 
+				String hId = "";
+				if (!TagUtils.isEmpty(id)) {
+					hId = " id=\"" + id + "\"";
+				}
 				String fullName = getLocation() + "/" + name;
 				JspWriter out = this.getJspContext().getOut();
 
 				if (type.equals("text/css") || type.equals("css")) {
-					out.write(String.format(LINK_TAG, fullName));
+					out.write(String.format(LINK_TAG, hId, fullName));
 				} else if (type.equals("text/javascript") || type.equals("js")) {
-					out.write(String.format(SCRIPT_TAG, fullName));
+					out.write(String.format(SCRIPT_TAG, hId, fullName));
 				}
 			}
 		}
@@ -72,6 +79,14 @@ public class ResourceTag extends SimpleTagSupport {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }
