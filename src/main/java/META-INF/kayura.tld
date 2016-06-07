@@ -6,6 +6,19 @@
 	<short-name>jeasyui-tags</short-name>
 	<uri>http://www.kayura.org/tags/jeasyui</uri>
 
+	<!-- AutoForm -->
+	<tag>
+		<name>autoform</name>
+		<tag-class>org.kayura.tags.easyui.AutoFormTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>formAttributes</name>
+			<description>表单的属性数据集.类型：org.kayura.tags.types.FormAttribute</description>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
 	<!-- DataList -->
 	<tag>
 		<name>datalist</name>
