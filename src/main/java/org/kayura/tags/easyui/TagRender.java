@@ -35,6 +35,7 @@ public abstract class TagRender extends BodyTagSupport {
 
 	protected final Log logger = LogFactory.getLog(this.getClass());
 
+	private Boolean disabledTag = false;
 	private String classStyle;
 	private String style;
 
@@ -198,10 +199,17 @@ public abstract class TagRender extends BodyTagSupport {
 				out.write(" id=\"" + getId() + "\"");
 			}
 			if (!isEmpty(getEasyUITag())) {
-				if (!isEmpty(getClassStyle())) {
-					out.write(" class=\"easyui-" + getEasyUITag() + " " + getClassStyle().trim() + "\"");
+
+				if (disabledTag) {
+					if (!isEmpty(getClassStyle())) {
+						out.write(" class=\"" + getClassStyle().trim() + "\"");
+					}
 				} else {
-					out.write(" class=\"easyui-" + getEasyUITag() + "\"");
+					if (!isEmpty(getClassStyle())) {
+						out.write(" class=\"easyui-" + getEasyUITag() + " " + getClassStyle().trim() + "\"");
+					} else {
+						out.write(" class=\"easyui-" + getEasyUITag() + "\"");
+					}
 				}
 			} else {
 				if (!isEmpty(getClassStyle())) {
@@ -260,6 +268,14 @@ public abstract class TagRender extends BodyTagSupport {
 
 	public void setStyle(String style) {
 		this.style = style;
+	}
+
+	public Boolean getDisabledTag() {
+		return disabledTag;
+	}
+
+	public void setDisabledTag(Boolean disabledTag) {
+		this.disabledTag = disabledTag;
 	}
 
 }

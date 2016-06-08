@@ -5382,6 +5382,10 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 			<description>菜单标签ID</description>
 		</attribute>
 		<attribute>
+			<name>disabledTag</name>
+			<description>是否禁止生成 class='easyui-datagrid' 属性.</description>
+		</attribute>
+		<attribute>
 			<name>name</name>
 			<description>name 标签.</description>
 		</attribute>
