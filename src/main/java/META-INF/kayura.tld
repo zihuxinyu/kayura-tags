@@ -28,10 +28,12 @@
 		<attribute>
 			<name>id</name>
 			<description>菜单标签ID</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>name</name>
 			<description>name 标签.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>width</name>
@@ -51,10 +53,12 @@
 		<attribute>
 			<name>classStyle</name>
 			<description>附加样式.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>style</name>
 			<description>HTML标签样式定义.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<!-- Panel 属性 -->
 		<attribute>
@@ -336,10 +340,12 @@
 		<attribute>
 			<name>treeField</name>
 			<description>定义树节点字段。（必须的）</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>animate</name>
 			<description>定义在节点展开或折叠的时候是否显示动画效果。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
 
@@ -352,10 +358,12 @@
 		<attribute>
 			<name>id</name>
 			<description>菜单标签ID</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>name</name>
 			<description>name 标签.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>width</name>
@@ -375,10 +383,12 @@
 		<attribute>
 			<name>classStyle</name>
 			<description>附加样式.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>style</name>
 			<description>HTML标签样式定义.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<!-- Panel 属性 -->
 		<attribute>
@@ -660,22 +670,27 @@
 		<attribute>
 			<name>lines</name>
 			<description>定义是否显示行号 </description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>checkbox</name>
 			<description>定义是否在每行开头显示复选框。 </description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>valueField</name>
 			<description>行绑定的字段值名称。 </description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>textField</name>
 			<description>行绑定的字段名名称。 </description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>groupField</name>
 			<description>指定分组字段名称。 </description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>textFormatter</name>
@@ -685,6 +700,7 @@
 			row：行记录数据<br>
 			index：行索引]]>
 			</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>groupFormatter</name>
@@ -693,6 +709,7 @@
 			value：通过“groupField”属性定义的分组字段名称<br>
 			rows：指定分组字段名称对应的数据行记录数组]]>
 			</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
 
@@ -705,10 +722,12 @@
 		<attribute>
 			<name>id</name>
 			<description>菜单标签ID</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>name</name>
 			<description>name 标签.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>width</name>
@@ -728,10 +747,12 @@
 		<attribute>
 			<name>classStyle</name>
 			<description>附加样式.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>style</name>
 			<description>HTML标签样式定义.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<!-- Panel 属性 -->
 		<attribute>
@@ -1041,91 +1062,113 @@
 		<attribute>
 			<name>id</name>
 			<description>菜单标签ID</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>name</name>
 			<description>name 标签.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>classStyle</name>
 			<description>附加样式.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>style</name>
 			<description>HTML标签样式定义.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<!-- Slider -->
 		<attribute>
 			<name>width</name>
 			<description>滑动条宽度。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>height</name>
 			<description>滑动条高度。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>mode</name>
 			<description>声明滚动条类型。可用值有：'h'(水平)、'v'(垂直)。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>reversed</name>
 			<description>设置为true时，最小值和最大值将对调他们的位置。（该属性自1.3.2版开始可用）</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>showTip</name>
 			<description>定义是否显示值信息提示。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>disabled</name>
 			<description>定义是否禁用滑动条。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>range</name>
 			<description>定义是否显示滑块范围。（该属性自1.4.2版开始可用）</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>value</name>
 			<description>默认值。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>min</name>
 			<description>允许的最小值。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>max</name>
 			<description>允许的最大值。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>step</name>
 			<description>值增加或减少。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>rule</name>
 			<description>显示标签旁边的滑块，'|' — 只显示一行。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>tipFormatter</name>
 			<description>该函数用于格式化滑动条。返回的字符串值将显示提示。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>converter</name>
 			<description>该转换器函数允许用户决定如何将一个值转换为进度条位置或进度条位置值。（该属性自1.3.6版开始可用）</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>onChange</name>
 			<description>在字段值更改的时候触发。参数： newValue, oldValue </description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>onSlideStart</name>
 			<description>在开始拖拽滑动条的时候触发。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>onSlideEnd</name>
 			<description>在结束拖拽滑动条的时候触发。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>onComplete</name>
 			<description>在滑块值被用户改变的时候触发，无论是拖动还是点击滑块。（该事件自1.3.4版开始可用）</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
 
@@ -1139,68 +1182,84 @@
 		<attribute>
 			<name>id</name>
 			<description>菜单标签ID</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>name</name>
 			<description>name 标签.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>classStyle</name>
 			<description>附加样式.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>style</name>
 			<description>HTML标签样式定义.</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<!-- ValidateBox 属性 -->
 		<attribute>
 			<name>type</name>
 			<description>文本框类型。可用值有："text"和"password"。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>required</name>
 			<description>定义为必填字段。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>validType</name>
 			<description>定义字段验证类型，比如：email, url等等。可用值有：1).一个有效类型字符串运用一个验证规则。2).一个有效类型数组运用多个验证规则。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>delay</name>
 			<description>延迟到最后验证输入值。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>missingMessage</name>
 			<description>当文本框未填写时出现的提示信息。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>invalidMessage</name>
 			<description>当文本框的内容被验证为无效时出现的提示。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>tipPosition</name>
 			<description>定义当文本框内容无效的时候提示消息显示的位置，有效的值有：'left','right'。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>deltaX</name>
 			<description>提示框在水平方向上位移。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>novalidate</name>
 			<description>为true时关闭验证功能。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<!-- TextBox 属性 -->
 		<attribute>
 			<name>width</name>
 			<description>组件的宽度。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>height</name>
 			<description>组件的高度。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>prompt</name>
 			<description>在输入框显示提示消息。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>value</name>
@@ -1210,22 +1269,27 @@
 		<attribute>
 			<name>multiline</name>
 			<description>定义是否是多行文本框。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>editable</name>
 			<description>定义用户是否可以直接在该字段内输入文字。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>disabled</name>
 			<description>定义是否禁用该字段。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>readonly</name>
 			<description>定义是否将该控件设为只读。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>icons</name>
 			<description>在文本框删贡献是图标。每一项都有以下属性：iconCls：类型string，图标的class名称；disabled：类型boolean，指明是否禁用该图标；handler：类型function，用于处理点击该图标以后的动作。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>iconCls</name>
@@ -5354,6 +5418,7 @@
 		<attribute>
 			<name>formatter</name>
 			<description>单元格formatter(格式化器)函数，带3个参数：value：字段值。row：行记录数据。index: 行索引。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>styler</name>
@@ -6656,18 +6721,22 @@ options：对象，object, 该编辑器属性对应于编辑类型。</descripti
 		<attribute>
 			<name>menu</name>
 			<description>搜索类型菜单。每个菜单项都具备一下属性：name：搜索类型名称。selected：自定义默认选中的搜索类型名称。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>searcher</name>
 			<description>在用户按下搜索按钮或回车键的时候调用searcher函数。函数结构：function(value,name)。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>disabled</name>
 			<description>定义是否禁用搜索框。</description>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
 			<name>menus</name>
 			<description>搜索类型菜单数据，当使用此菜单数据时，设定的 menu 值将被覆盖。</description>
+			<rtexprvalue>true</rtexprvalue>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
